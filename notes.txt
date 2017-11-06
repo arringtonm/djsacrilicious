@@ -1,0 +1,49 @@
+
+desired features/sections
+-- video plugin (full screen splash)
+    find/create quality video
+-- parallax?
+-- testimonials
+    seek more testimonials. import from sites.
+    link to weddingwire/google/etc
+-- calendar
+    (backend task)
+-- lots of pictures
+    see below
+-- mixes
+    use existing "plugin" code or update consistency
+-- bio/about
+    import existing bio and/or update
+-- previous venues / clients
+    prioritize clients to show and find logos
+-- social media links on nav (icons)
+-- nav (somewhere)
+
+
+
+aesthetic ideas:
+-- skinny sans serif
+-- black overlay/filter on pics/video for consistency and visual sharpness
+-- hero (video? sub-hero: rotating gallery)
+-- bright "feature" color.
+-- edgy/tasteful balance
+
+
+audience:
+-- prospective brides
+-- prospective event planner types
+-- other DJs/clubgoers/etc
+-- design/employer folks checking our portfolios
+
+
+schedule/targets/etc:
+-- find "cool" pieces
+-- figure out header/footer
+
+
+
+michael tasks:
+-- media
+    check laptop
+    check in with photographers (old)
+    check in with photographers (new)
