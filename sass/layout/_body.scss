@@ -6,7 +6,7 @@ body {
 }
 
 .main {
-  @include flex(justify,center,column);
+  @include flex(flex-start,center,column);
   width: 100%;
   flex: 1 0 auto;
   // background-color: rgba(00,00,00,0.1);
@@ -24,5 +24,8 @@ body {
     background-color: aqua; } }
 
 .main p {
-  @include font(16px,black);
-}
+  @include font(24px,black,300);
+  // text-shadow: 0px 0px 4px 10px white;
+  // -webkit-font-smoothing: antialiased;
+  padding: 25px 0px 0px 0px;
+  line-height: 1.6; }
