@@ -1,0 +1,28 @@
+body {
+  @include flex(center,center,column);
+  min-height: 100vh;
+  // background-color: aqua;
+  background-image: linear-gradient(to bottom right,aqua,magenta);
+}
+
+.main {
+  @include flex(justify,center,column);
+  width: 100%;
+  flex: 1 0 auto;
+  // background-color: rgba(00,00,00,0.1);
+ }
+
+.main button {
+  @include font(24px,black,700);
+  background-color: white;
+  padding: 20px 40px;
+  border: 7px solid black;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+  transition: 300ms ease-in-out;
+  &:hover {
+    background-color: aqua; } }
+
+.main p {
+  @include font(16px,black);
+}

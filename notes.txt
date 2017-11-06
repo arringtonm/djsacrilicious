@@ -19,6 +19,12 @@ desired features/sections
 -- social media links on nav (icons)
 -- nav (somewhere)
 
+    https://codepen.io/tomdurkin/pen/nvAjd
+    add transparency/opacity?
+
+-- RESPONSIVE
+    at least phone and "large"
+
 
 
 aesthetic ideas:

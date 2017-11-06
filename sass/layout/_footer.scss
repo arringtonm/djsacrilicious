@@ -1,0 +1,22 @@
+.footer {
+  @include flex;
+  @include font;
+  // margin-bottom: 0;
+  margin-top: auto;
+  margin-bottom: 0;
+  background-color: black;
+  height: 100px;
+  width: 100%; }
+
+.footer .container {
+  height: 100%;
+  @include flex(space-around,center); }
+
+.footer .social-media {
+  // opacity: 0.7;
+  height: 25px;
+  padding: 0px 10px;
+  filter: invert(100%);
+  // &:hover {
+  //   color: aqua; }
+  }
