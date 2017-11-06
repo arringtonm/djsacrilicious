@@ -1,0 +1,23 @@
+.gig {
+  width: 1000px;
+  @include flex(space-between,center);
+  height: 90px;
+}
+
+.gig-icon {
+  @include flex(center,center,column);
+  background-color: black;
+  padding: 5px 15px;
+  border: 1px solid black; }
+
+.gig-icon-month {
+  @include font(14px,white,300); }
+
+.gig-icon-day {
+  @include font(36px,white,300); }
+
+.gig-title {
+  @include font(18px,black,700); }
+
+.gig-time {
+  @include font(14px,black,300); }

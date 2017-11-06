@@ -2,14 +2,17 @@ body {
   @include flex(center,center,column);
   min-height: 100vh;
   // background-color: aqua;
-  background-image: linear-gradient(to bottom right,aqua,magenta);
+  // background-image: linear-gradient(to bottom right,aqua,magenta);
+  background-image: url("../img/crowd-bw.jpg");
+  background-size: cover;
 }
 
 .main {
   @include flex(flex-start,center,column);
   width: 100%;
   flex: 1 0 auto;
-  // background-color: rgba(00,00,00,0.1);
+  background-image: linear-gradient(to bottom right,aqua,magenta);
+  opacity: 0.7;
  }
 
 .main button {
@@ -28,4 +31,5 @@ body {
   // text-shadow: 0px 0px 4px 10px white;
   // -webkit-font-smoothing: antialiased;
   padding: 25px 0px 0px 0px;
-  line-height: 1.6; }
+  line-height: 1.6;
+  text-align: justify; }

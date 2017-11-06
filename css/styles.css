@@ -9,7 +9,8 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom right, aqua, magenta); }
+  background-image: url("../img/crowd-bw.jpg");
+  background-size: cover; }
 
 .main {
   display: flex;
@@ -17,7 +18,9 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  flex: 1 0 auto; }
+  flex: 1 0 auto;
+  background-image: linear-gradient(to bottom right, aqua, magenta);
+  opacity: 0.7; }
 
 .main button {
   font-family: 'Open Sans', sans-serif;
@@ -39,7 +42,8 @@ body {
   font-weight: 300;
   color: black;
   padding: 25px 0px 0px 0px;
-  line-height: 1.6; }
+  line-height: 1.6;
+  text-align: justify; }
 
 .container {
   width: 1000px; }
@@ -113,5 +117,46 @@ body {
     .header li a:hover {
       background-color: aqua;
       color: black; }
+
+.gig {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 90px; }
+
+.gig-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  padding: 5px 15px;
+  border: 1px solid black; }
+
+.gig-icon-month {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: white; }
+
+.gig-icon-day {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: white; }
+
+.gig-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: black; }
+
+.gig-time {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: black; }
 
 /*# sourceMappingURL=styles.css.map */
