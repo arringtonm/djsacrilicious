@@ -3,21 +3,18 @@
   flex-wrap: wrap;
   margin-bottom: 250px;
   margin-top: 150px;
-  width: 1000px;
-}
+  width: 1000px; }
 
 .gallery .logo {
   filter: grayscale(100%) contrast(100%) saturate(100%);
   // height: 50px;
-  margin: 10px 10px;
-}
+  margin: 10px 10px; }
 
 .gallery img {
   height: 100%; }
 
 .gallery .logo-invert {
-  filter: invert(100%);
-}
+  filter: invert(100%); }
 
 .gallery .logo-smaller {
   height: 90%; }
@@ -31,14 +28,18 @@
 .gallery .logo-even-bigger {
   height: 120%; }
 
-.gallery .trans-down {
-  transform: translateY(10px);
+.gallery .logo-even-bigger-again {
+  height: 140%; }
+
+.gallery .trans-up {
+  transform: translateY(-10px);
 }
+
+.gallery .trans-down {
+  transform: translateY(10px); }
 
 .gallery .trans-down-more {
-  transform: translateY(15px);
-}
+  transform: translateY(15px); }
 
 .gallery .logo-darker {
-  filter: brightness(20%);
-}
+  filter: brightness(20%); }

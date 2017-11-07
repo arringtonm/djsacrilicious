@@ -9,7 +9,7 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url("../img/crowd-grad.jpg");
+  background-image: url("../img/crowd-bw-grad-4.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -225,6 +225,12 @@ body {
 
 .gallery .logo-even-bigger {
   height: 120%; }
+
+.gallery .logo-even-bigger-again {
+  height: 140%; }
+
+.gallery .trans-up {
+  transform: translateY(-10px); }
 
 .gallery .trans-down {
   transform: translateY(10px); }
