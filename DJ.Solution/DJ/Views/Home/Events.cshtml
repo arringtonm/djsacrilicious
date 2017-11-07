@@ -8,14 +8,16 @@
     {
         <div class="container">
             <div class="row">
-                <div class="col-sm-1">
+                <div class="col-sm-1 stretch">
                     <div class="time-block">
                         <h4>@djevent.GetStart().ToString("MMM")</h4>
                         <p>@djevent.GetStart().ToString("dd")</p>
                     </div>
                 </div>
                 <div class="col-sm-11">
-                    <p>@djevent.GetName() @djevent.GetVenueName() @djevent.GetVenueAddress()</p>
+                    <h4>@djevent.GetStart().ToString("h:mm tt") - @djevent.GetEnd().ToString("MMM dd h:mm tt")</h4>
+                    <h4>@djevent.GetName()</h4>
+                    <p>@djevent.GetVenueName() @djevent.GetVenueAddress()</p>
                 </div>
             </div>
         </div>

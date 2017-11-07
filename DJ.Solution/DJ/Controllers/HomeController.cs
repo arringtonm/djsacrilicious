@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using DJ.Models;
+using MySql.Data.MySqlClient;
 
 namespace DJ.Controllers
 {
@@ -23,14 +24,33 @@ namespace DJ.Controllers
       [HttpPost("/events/add")]
       public ActionResult EventAdd()
       {
-          DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
-          Console.WriteLine(start.GetType());
-          DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
-          // Convert datetimes to mysql format.
-          Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
-          newEvent.Save();
-          Console.WriteLine("you got here: " + Event.GetAll().Count);
-          return RedirectToAction("Events");
+          try
+          {
+              DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
+              DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+              // Convert datetimes to mysql format.
+              Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
+              newEvent.Save();
+              return RedirectToAction("Events");
+          }
+          catch (MySqlException ex)
+          {
+              return RedirectToAction("Events");
+          }
+      }
+
+      [HttpGet("/events/past")]
+      public ActionResult EventsPast()
+      {
+          List<Event> pastEvents = Event.GetAllByDate(false);
+          return View("Events", pastEvents);
+      }
+
+      [HttpGet("/events/upcoming")]
+      public ActionResult EventsUpcoming()
+      {
+          List<Event> upcomingEvents = Event.GetAllByDate();
+          return View("Events", upcomingEvents);
       }
 
     }

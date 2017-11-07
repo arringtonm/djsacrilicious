@@ -48,34 +48,7 @@ namespace DJ.Models
             SetId(id);
         }
 
-        // Get all past events in database.
-        // public static List<Event> GetAllPast()
-        // {
-        //     List<Event> matchedEvents = new List<Event> {};
-        //     DateTime currentDate = DateTime.Now;
-        //     string currentDateInMySql = currentDate.ToString("yyyy-MM-dd HH:mm:ss"); // saves date to MySql format
-        //     MySqlConnection conn = DB.Connection();
-        //     conn.Open();
-        //
-        //     var cmd = conn.CreateCommand() as MySqlCommand;
-        //     cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @CurrentDate;";
-        //     cmd.Parameters.Add(new MySqlParameter("@CurrentDate", currentDateInMySql));
-        //     var rdr = cmd.ExecuteReader() as MySqlDataReader;
-        //     while (rdr.Read())
-        //     {
-        //         int eventId = rdr.GetInt32(0);
-        //         DateTime start = rdr.GetDateTime(1);
-        //         DateTime end = rdr.GetDateTime(2);
-        //         string eventName = rdr.GetString(3);
-        //         string venueName = rdr.GetString(4);
-        //         string venueAddress = rdr.GetString(5);
-        //         Event matchedEvent = new Event(start, end, eventName, venueName, venueAddress, eventId);
-        //         matchedEvents.Add(matchedEvent);
-        //     }
-        //     return matchedEvents;
-        // }
-
-        // Get all upcoming events in database.
+        // Get all events in database by current date, by default will return upcoming. If false, will return past events.
         public static List<Event> GetAllByDate(bool upcoming = true)
         {
             List<Event> upcomingEvents = new List<Event> {};
