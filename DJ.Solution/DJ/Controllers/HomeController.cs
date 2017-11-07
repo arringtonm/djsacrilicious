@@ -20,10 +20,17 @@ namespace DJ.Controllers
         return View(allEvents);
       }
 
-      [HttpGet("/events/add")]
-      public ActionResult EventForm()
+      [HttpPost("/events/add")]
+      public ActionResult EventAdd()
       {
-          return View();
+          DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
+          Console.WriteLine(start.GetType());
+          DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+          // Convert datetimes to mysql format.
+          Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
+          newEvent.Save();
+          Console.WriteLine("you got here: " + Event.GetAll().Count);
+          return RedirectToAction("Events");
       }
 
     }

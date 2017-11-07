@@ -79,5 +79,23 @@ namespace DJ.Models.Tests
             List<Event> expectedList = new List<Event>{event2};
             CollectionAssert.AreEqual(result, expectedList);
         }
+
+        [TestMethod]
+        public void GetAllUpcoming_GetsListOfOnlyUpcomingEvents_List()
+        {
+            Event event1 = new Event(Convert.ToDateTime("2017-04-16 23:00"), Convert.ToDateTime("2017-04-17 02:00"), "Macy's Spring Nights", "Macy's", "123 Sesame St");
+            event1.Save();
+            Event event2 = new Event(Convert.ToDateTime("2017-07-16 22:00"), Convert.ToDateTime("2017-07-17 01:00"), "Macy's Summer Nights", "Macy's", "123 Sesame St");
+            event2.Save();
+            Event event3 = new Event(Convert.ToDateTime("2017-10-16 23:00"), Convert.ToDateTime("2017-10-17 02:00"), "Macy's Autumn Nights", "Macy's", "123 Sesame St");
+            event3.Save();
+            Event event4 = new Event(Convert.ToDateTime("2017-12-16 22:00"), Convert.ToDateTime("2017-12-17 01:00"), "Macy's Winter Nights", "Macy's", "123 Sesame St");
+            event4.Save();
+
+            List<Event> result = Event.GetAllUpcoming();
+            List<Event> expectedList = new List<Event>{event4};
+            CollectionAssert.AreEqual(result, expectedList);
+
+        }
     }
 }
