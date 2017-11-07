@@ -6,7 +6,10 @@
   margin-bottom: 0;
   background-color: black;
   height: 100px;
-  width: 100%; }
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+ }
 
 .footer .container {
   height: 100%;
