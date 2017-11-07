@@ -1,0 +1,35 @@
+@media only screen and (max-width: 1000px) {
+  body {
+    @include flex(center,center,column);
+    min-height: 100vh;
+    background-image: url("../img/crowd-bw-grad-4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; }
+  .container {
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+  .gig {
+    @include flex(space-around,center);
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+  .sounds {
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .clients .gallery {
+    @include flex(space-around,center);
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    width: 100%; }
+  .main .container p {
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px; }
+}
