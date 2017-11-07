@@ -1,3 +1,9 @@
+aqua: #00ffff
+magenta: #FF00FF
+
+** bring background pic down a little? and very slightly crooked
+** decrease darkness & sat on image to increase text clarity 
+
 
 desired features/sections
 -- video plugin (full screen splash)
