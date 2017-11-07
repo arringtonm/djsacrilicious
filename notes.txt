@@ -2,7 +2,16 @@ aqua: #00ffff
 magenta: #FF00FF
 
 ** bring background pic down a little? and very slightly crooked
-** decrease darkness & sat on image to increase text clarity 
+** decrease darkness & sat on image to increase text clarity
+
+TO-DO
+
+header
+  absorb "hire me/let's chat" into top after scrolling?
+  shift border to left side in collapsed version
+
+
+  Adidas, Andersen Construction, Ben & Jerry’s, Children's Relief Nursery, Doernbecher Children's Hospital,  Hewlet Packard, H&M, Macy's, Nike, Portland State University, Portland Timbers, SCRAP, Stila Cosmetics, T-Mobile, The Hotel Monaco, The Multnomah Athletic Club, The Oregonian, Tilt, US Bank, Victoria's Secret, Widmer, Willamette University.
 
 
 desired features/sections

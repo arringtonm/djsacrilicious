@@ -23,6 +23,7 @@
 .header li {
   padding: 0px 15px;
   display: inline;
+  line-height: 1.7;
   & a {
     border-bottom: 5px solid magenta;
     @include font;
