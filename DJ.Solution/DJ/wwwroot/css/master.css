@@ -1,3 +1,16 @@
 body {
   font-family: sans-serif;
 }
+
+.time-block {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    width: 50px;
+    text-align: center;
+}
+
+.time-block h4 {
+    font-size: 24px;
+    margin: 0;
+}

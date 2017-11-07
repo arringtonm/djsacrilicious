@@ -12,5 +12,19 @@ namespace DJ.Controllers
       {
         return View();
       }
+
+      [HttpGet("/events")]
+      public ActionResult Events()
+      {
+        List<Event> allEvents = Event.GetAll();
+        return View(allEvents);
+      }
+
+      [HttpGet("/events/add")]
+      public ActionResult EventForm()
+      {
+          return View();
+      }
+
     }
 }
