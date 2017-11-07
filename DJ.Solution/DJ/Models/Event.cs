@@ -48,18 +48,49 @@ namespace DJ.Models
             SetId(id);
         }
 
-        // Get all upcoming events in Database.
-        public static List<Event> GetAllUpcoming()
+        // Get all past events in database.
+        // public static List<Event> GetAllPast()
+        // {
+        //     List<Event> matchedEvents = new List<Event> {};
+        //     DateTime currentDate = DateTime.Now;
+        //     string currentDateInMySql = currentDate.ToString("yyyy-MM-dd HH:mm:ss"); // saves date to MySql format
+        //     MySqlConnection conn = DB.Connection();
+        //     conn.Open();
+        //
+        //     var cmd = conn.CreateCommand() as MySqlCommand;
+        //     cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @CurrentDate;";
+        //     cmd.Parameters.Add(new MySqlParameter("@CurrentDate", currentDateInMySql));
+        //     var rdr = cmd.ExecuteReader() as MySqlDataReader;
+        //     while (rdr.Read())
+        //     {
+        //         int eventId = rdr.GetInt32(0);
+        //         DateTime start = rdr.GetDateTime(1);
+        //         DateTime end = rdr.GetDateTime(2);
+        //         string eventName = rdr.GetString(3);
+        //         string venueName = rdr.GetString(4);
+        //         string venueAddress = rdr.GetString(5);
+        //         Event matchedEvent = new Event(start, end, eventName, venueName, venueAddress, eventId);
+        //         matchedEvents.Add(matchedEvent);
+        //     }
+        //     return matchedEvents;
+        // }
+
+        // Get all upcoming events in database.
+        public static List<Event> GetAllByDate(bool upcoming = true)
         {
-            // Don't need the string parameter except for this test.
             List<Event> upcomingEvents = new List<Event> {};
             DateTime currentDate = DateTime.Now;
             string currentDateInMySql = currentDate.ToString("yyyy-MM-dd HH:mm:ss"); // saves date to MySql format
+            string dateOperator = ">=";
+            if (upcoming != true)
+            {
+                dateOperator = "<";
+            }
             MySqlConnection conn = DB.Connection();
             conn.Open();
 
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @CurrentDate;";
+            cmd.CommandText = @"SELECT * FROM events WHERE start_time" + @dateOperator + "@CurrentDate;";
             cmd.Parameters.Add(new MySqlParameter("@CurrentDate", currentDateInMySql));
             var rdr = cmd.ExecuteReader() as MySqlDataReader;
             while (rdr.Read())
