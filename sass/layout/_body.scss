@@ -18,15 +18,16 @@ body {
   margin-top: 200px;
   margin-bottom: 70px;
   @include font(24px,black,700);
-  background-color: magenta;
+  background-color: #e500e5;
   padding: 20px 40px;
   border: 7px solid black;
   border-radius: 4px;
   box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.5);
   &:hover {
-    background-color: #e500e5; }
+    background-color: magenta; }
   &:active {
     transform: translateY(2px) scale(0.99);
+    background-color: #FF66FF;
     box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5); }
   &:focus {
     outline: 0; } }
