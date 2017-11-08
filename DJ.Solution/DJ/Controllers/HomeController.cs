@@ -36,12 +36,12 @@ namespace DJ.Controllers
     public ActionResult EventAdd()
     {
       DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
-      DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+      DateTime end = Convert.ToDateTime(Request.Form["event-end"]);
       Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
       try
       {
         //Checks that input start time and end time are valid.
-        if (start.Subtract(end).TotalHours < 1)
+        if (end.Subtract(start).TotalHours < 1)
         {
           throw new InvalidStartOrEndException();
         }
@@ -105,18 +105,20 @@ namespace DJ.Controllers
     public ActionResult EventEdit(int id)
     {
       DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
-      DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+      DateTime end = Convert.ToDateTime(Request.Form["event-end"]);
       Event selectedEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"], id);
+      // selectedEvent.Update();
+      // return RedirectToAction("Events");
       try
       {
         //Checks that input start time and end time are valid.
-        if (start.Subtract(end).TotalHours > 1)
+        if (end.Subtract(start).TotalHours < 1)
         {
           throw new InvalidStartOrEndException();
         }
-        selectedEvent.Update();
-        return RedirectToAction("Events");
-        // Maybe this should be a success page instead.
+          selectedEvent.Update();
+          return RedirectToAction("EventsEdit");
+          // Maybe this should be a success page instead.
       }
       catch (InvalidStartOrEndException ex)
       {
@@ -134,6 +136,14 @@ namespace DJ.Controllers
         model.Add("error", 2);
         return View("EventEdit", model);
       }
+    }
+
+    [HttpPost("/events/delete/{id}")]
+    public ActionResult EventDelete(int id)
+    {
+      Event selectedEvent = Event.Find(id);
+      selectedEvent.Delete();
+      return RedirectToAction("EventsEdit");
     }
 
     // Get Past events.
