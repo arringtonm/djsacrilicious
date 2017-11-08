@@ -79,12 +79,12 @@ namespace DJ.Models
             }
             return upcomingEvents;
         }
-        
+
         // Get all for views, showing upcoming and back 1 month.
         public static List<Event> GetAllOneMonthBefore()
         {
             List<Event> displayEvents = new List<Event> {};
-            DateTime monthBefore = DateTime.Now.AddMonth(-1);
+            DateTime monthBefore = DateTime.Now.AddMonths(-1);
             string monthBeforeString = monthBefore.ToString("yyyy-MM-dd HH:mm:ss"); // saves date to MySql format
             MySqlConnection conn = DB.Connection();
             conn.Open();

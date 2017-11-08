@@ -9,19 +9,24 @@
             {
                 @foreach(var djevent in Model["all-events"])
                 {
-                        @if(@djevent < DateTime.Now)
+                        @if(djevent.GetStart() < DateTime.Now)
                         {
-                          <div class="form-side-events-item past-item">
+                          <div class="form-side-events-item past-item item">
+                          <p><span class="event-name">@djevent.GetName()</span></p>
+                          <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
+                          <p><span class="venue-name">@djevent.GetVenueName()</span></p>
+                          <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
+                          </div>
                         }
                         else
                         {
                           <div class="form-side-events-item item">
+                          <p><span class="event-name">@djevent.GetName()</span></p>
+                          <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
+                          <p><span class="venue-name">@djevent.GetVenueName()</span></p>
+                          <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
+                          </div>
                         }
-                        <p><span class="event-name">@djevent.GetName()</span></p>
-                        <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
-                        <p><span class="venue-name">@djevent.GetVenueName()</span></p>
-                        <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
-                        </div>
                 }
             }
             else

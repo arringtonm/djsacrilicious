@@ -41,7 +41,7 @@ namespace DJ.Controllers
       try
       {
         //Checks that input start time and end time are valid.
-        if (start.Subtract(end).TotalHours > 1)
+        if (start.Subtract(end).TotalHours < 1)
         {
           throw new InvalidStartOrEndException();
         }
@@ -66,16 +66,16 @@ namespace DJ.Controllers
       }
     }
 
-    // Go to page with events
+    // Go to page with events to edit.
     [HttpGet("/events/edit")]
-    public ActionResult EventEdit()
+    public ActionResult EventsEdit()
     {
       Dictionary<string,object> model = new Dictionary<string, object>{};
       List<Event> allEvents = Event.GetAll();
       model.Add("all-events", allEvents);
-      model.Add("selected-event", null);
+      // model.Add("selected-event", null);
       model.Add("error", 0);
-      return View(model);
+      return View("EventEdit",model);
     }
 
     // // Go to page with events
@@ -91,14 +91,49 @@ namespace DJ.Controllers
     // }
 
     // Go to page with events
-    [HttpGet("/events/edit/{id}")]
+    // [HttpGet("/events/edit/{id}")]
+    // public ActionResult EventEdit(int id)
+    // {
+    //   Dictionary<string,object> model = new Dictionary<string, object>{};
+    //   List<Event> allEvents = Event.GetAll();
+    //   model.Add("all-events", allEvents);
+    //   model.Add("error", 0);
+    //   return View(model);
+    // }
+
+    [HttpPost("/events/edit/{id}")]
     public ActionResult EventEdit(int id)
     {
-      Dictionary<string,object> model = new Dictionary<string, object>{};
-      List<Event> allEvents = Event.GetAll();
-      model.Add("all-events", allEvents);
-      model.Add("error", 0);
-      return View(model);
+      DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
+      DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+      Event selectedEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"], id);
+      try
+      {
+        //Checks that input start time and end time are valid.
+        if (start.Subtract(end).TotalHours > 1)
+        {
+          throw new InvalidStartOrEndException();
+        }
+        selectedEvent.Update();
+        return RedirectToAction("Events");
+        // Maybe this should be a success page instead.
+      }
+      catch (InvalidStartOrEndException ex)
+      {
+        Dictionary<string,object> model = new Dictionary<string, object>{};
+        List<Event> allEvents = Event.GetAll();
+        model.Add("all-events", allEvents);
+        model.Add("error", 1);
+        return View("EventEdit", model);
+      }
+      catch (MySqlException ex)
+      {
+        Dictionary<string,object> model = new Dictionary<string, object>{};
+        List<Event> allEvents = Event.GetAll();
+        model.Add("all-events", allEvents);
+        model.Add("error", 2);
+        return View("EventEdit", model);
+      }
     }
 
     // Get Past events.
