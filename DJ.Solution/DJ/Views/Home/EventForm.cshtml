@@ -4,19 +4,29 @@
 <div class="row">
     <div class="col-sm-3">
         <div class="form-side-events">
-            <h3>All Events</h3>
+            <h3>Events</h3>
             @if (Model["all-events"].Count != 0)
             {
                 @foreach(var djevent in Model["all-events"])
                 {
-                    /*<a href="/events/copy/@djevent.GetId()">*/
-                        <div class="form-side-events-item item">
-                        <p><span class="event-name">@djevent.GetName()</span></p>
-                        <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
-                        <p><span class="venue-name">@djevent.GetVenueName()</span></p>
-                        <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
-                        </div>
-                    /*</a>*/
+                        @if(djevent.GetStart() < DateTime.Now)
+                        {
+                          <div class="form-side-events-item past-item item">
+                          <p><span class="event-name">@djevent.GetName()</span></p>
+                          <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
+                          <p><span class="venue-name">@djevent.GetVenueName()</span></p>
+                          <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
+                          </div>
+                        }
+                        else
+                        {
+                          <div class="form-side-events-item item">
+                          <p><span class="event-name">@djevent.GetName()</span></p>
+                          <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
+                          <p><span class="venue-name">@djevent.GetVenueName()</span></p>
+                          <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
+                          </div>
+                        }
                 }
             }
             else
@@ -27,7 +37,7 @@
     </div>
     <div class="col-sm-9">
 
-            <h3>Add an Event...</h3>
+            <h3>Add an Event... </h3>
             <form action="/events/add" method="post">
                 <div class="form-group">
                     <label for='event-name'>Event name:</label>
@@ -39,9 +49,13 @@
                     <label for='event-end'>Ends @@:</label>
                     <input type="datetime-local" id="event-end" name="event-end">
                 </div>
-                @if (Model["error"] == true)
+                @if (Model["error"] == 1)
                 {
-                    <p class="text-danger">Date and time entry was invalid. Make sure you do not enter a duplicate time slot.</p>
+                    <p class="text-danger">Date and time entry was invalid. Make sure you do not enter a time slot that <em>already exists.</em></p>
+                }
+                else if (Model["error"] == 2)
+                {
+                    <p class="text-danger">Date and time entry was invalid. Make sure start and end time are <em>at least an hour apart</em>.</p>
                 }
                 <div class="form-group">
                     <label for='venue-name'>Venue:</label>
@@ -51,7 +65,7 @@
                     <label for='venue-address'>Address:</label>
                     <input type="text" id="venue-address" name="venue-address" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-info">Submit Event</button>
+                <button type="submit" class="btn btn-info">Add Event</button>
                 <button type="reset" class="btn btn-default">Reset</button>
             </form>
 
