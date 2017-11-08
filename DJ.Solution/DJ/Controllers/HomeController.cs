@@ -11,18 +11,18 @@ namespace DJ.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
-    }
-
-    [HttpGet("/events")]
-    public ActionResult Events()
-    {
-
       List<Event> allEvents = Event.GetAllOneMonthBefore();
       return View(allEvents);
     }
-
-    [HttpGet("/events/add")]
+    //
+    // [HttpGet("/events")]
+    // public ActionResult Events()
+    // {
+    //
+    //   List<Event> allEvents = Event.GetAllOneMonthBefore();
+    //   return View(allEvents);
+    // }
+    [HttpGet("/events/admin/add")]
     public ActionResult EventForm()
     {
       Dictionary<string,object> model = new Dictionary<string, object>{};
@@ -32,7 +32,7 @@ namespace DJ.Controllers
       return View(model);
     }
 
-    [HttpPost("/events/add")]
+    [HttpPost("/events/admin/add")]
     public ActionResult EventAdd()
     {
       DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
@@ -67,7 +67,7 @@ namespace DJ.Controllers
     }
 
     // Go to page with events to edit.
-    [HttpGet("/events/edit")]
+    [HttpGet("/events/admin/edit")]
     public ActionResult EventsEdit()
     {
       Dictionary<string,object> model = new Dictionary<string, object>{};
@@ -101,7 +101,7 @@ namespace DJ.Controllers
     //   return View(model);
     // }
 
-    [HttpPost("/events/edit/{id}")]
+    [HttpPost("/events/admin/edit/{id}")]
     public ActionResult EventEdit(int id)
     {
       DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
@@ -138,7 +138,7 @@ namespace DJ.Controllers
       }
     }
 
-    [HttpPost("/events/delete/{id}")]
+    [HttpPost("/events/admin/delete/{id}")]
     public ActionResult EventDelete(int id)
     {
       Event selectedEvent = Event.Find(id);
@@ -146,21 +146,21 @@ namespace DJ.Controllers
       return RedirectToAction("EventsEdit");
     }
 
-    // Get Past events.
-    [HttpGet("/events/past")]
-    public ActionResult EventsPast()
-    {
-      List<Event> pastEvents = Event.GetAllByDate(false);
-      return View("Events", pastEvents);
-    }
-
-    // Get upcoming events.
-    [HttpGet("/events/upcoming")]
-    public ActionResult EventsUpcoming()
-    {
-      List<Event> upcomingEvents = Event.GetAllByDate();
-      return View("Events", upcomingEvents);
-    }
+    // // Get Past events.
+    // [HttpGet("/events/past")]
+    // public ActionResult EventsPast()
+    // {
+    //   List<Event> pastEvents = Event.GetAllByDate(false);
+    //   return View("Events", pastEvents);
+    // }
+    //
+    // // Get upcoming events.
+    // [HttpGet("/events/upcoming")]
+    // public ActionResult EventsUpcoming()
+    // {
+    //   List<Event> upcomingEvents = Event.GetAllByDate();
+    //   return View("Events", upcomingEvents);
+    // }
 
   }
 }

@@ -25,8 +25,8 @@ $(document).ready(function(){
             $("#venue-address").val(itemAddress);
             $("#event-start").val(itemStart);
             $("#event-end").val(itemEnd);
-            $("form#edit").attr("action", "/events/edit/" + itemId);
-            $("form#delete").attr("action", "/events/delete/" + itemId);
+            $("form#edit").attr("action", "/events/admin/edit/" + itemId);
+            $("form#delete").attr("action", "/events/admin/delete/" + itemId);
             $("button").removeAttr("disabled");
         });
     });
