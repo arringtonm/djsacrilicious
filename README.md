@@ -1,4 +1,4 @@
-# _dj Sacrilicious_
+# ![image of dj sacrilicious](img/logo.jpg)
 
 #### _This application is a revamped simplified version of Michael's DJing website that informs the user about Michael, dates he's already been booked for, his mixes, and permits the admin to book an event through a calendar interface. 11-9-17_
 
@@ -22,7 +22,7 @@ _To install, connect to the internet, open your shell program of choice and type
 
 _git clone https://github.com/arringtonm/djsacrilicious.git _
 
-_After cloning, open index.html with your web browser or any of the included files in your favorite text editor._
+_After cloning, open index.html with your web browser or any of the included files in your desired text editor._
 
 ## Known Bugs
 
@@ -34,10 +34,10 @@ _Please contact Michael Arrington at djsacrilicious@gmail.com for any inquiries.
 
 ## Technologies Used
 
-_SASS, CSS, HTML, GIT, C#, .NET _
+_SASS, CSS, HTML, GIT, C#, .NET_
 
 ### License
 
 *MIT*
 
-Copyright (c) 2017 **_ Michael Arrington, Kim Bordon, Elliot Burin, Alan Falcon_**
+Copyright (c) 2017 **_Michael Arrington, Kim Bordon, Elliot Burin, Alan Falcon_**
