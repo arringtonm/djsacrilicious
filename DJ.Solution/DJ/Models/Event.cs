@@ -79,6 +79,32 @@ namespace DJ.Models
             }
             return upcomingEvents;
         }
+        // Get all for views, showing upcoming and back 1 month.
+        public static List<Event> GetAllOneMonthBefore()
+        {
+            List<Event> displayEvents = new List<Event> {};
+            DateTime monthBefore = DateTime.Now.AddMonth(-1);
+            string monthBeforeString = monthBefore.ToString("yyyy-MM-dd HH:mm:ss"); // saves date to MySql format
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @MonthBefore;";
+            cmd.Parameters.Add(new MySqlParameter("@MonthBefore", monthBeforeString));
+            var rdr = cmd.ExecuteReader() as MySqlDataReader;
+            while (rdr.Read())
+            {
+                int eventId = rdr.GetInt32(0);
+                DateTime start = rdr.GetDateTime(1);
+                DateTime end = rdr.GetDateTime(2);
+                string eventName = rdr.GetString(3);
+                string venueName = rdr.GetString(4);
+                string venueAddress = rdr.GetString(5);
+                Event displayEvent = new Event(start, end, eventName, venueName, venueAddress, eventId);
+                displayEvents.Add(displayEvent);
+            }
+            return displayEvents;
+        }
 
         // Delete an event.
         public void Delete()

@@ -9,14 +9,19 @@
             {
                 @foreach(var djevent in Model["all-events"])
                 {
-                    /*<a href="/events/copy/@djevent.GetId()">*/
-                        <div class="form-side-events-item item">
+                        @if(@djevent < DateTime.Now)
+                        {
+                          <div class="form-side-events-item past-item">
+                        }
+                        else
+                        {
+                          <div class="form-side-events-item item">
+                        }
                         <p><span class="event-name">@djevent.GetName()</span></p>
                         <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
                         <p><span class="venue-name">@djevent.GetVenueName()</span></p>
                         <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
                         </div>
-                    /*</a>*/
                 }
             }
             else
@@ -39,9 +44,13 @@
                     <label for='event-end'>Ends @@:</label>
                     <input type="datetime-local" id="event-end" name="event-end">
                 </div>
-                @if (Model["error"] == true)
+                @if (Model["error"] == 1)
                 {
-                    <p class="text-danger">Date and time entry was invalid. Make sure you do not enter a duplicate time slot.</p>
+                    <p class="text-danger">Date and time entry was invalid. Make sure you do not enter a time slot that <em>already exists.</em></p>
+                }
+                else if (Model["error"] == 2)
+                {
+                    <p class="text-danger">Date and time entry was invalid. Make sure start and end time are <em>at least an hour apart</em>.</p>
                 }
                 <div class="form-group">
                     <label for='venue-name'>Venue:</label>
