@@ -229,6 +229,9 @@ body {
 .gallery .logo-even-bigger {
   height: 120%; }
 
+.gallery .logo-way-bigger {
+  height: 170%; }
+
 .gallery .logo-even-bigger-again {
   height: 140%; }
 
@@ -243,6 +246,9 @@ body {
 
 .gallery .logo-darker {
   filter: brightness(20%); }
+
+.gallery .logo-dark {
+  filter: brightness(50%); }
 
 @media only screen and (max-width: 1000px) {
   .header .container {
