@@ -6,3 +6,11 @@
 /Users/Guest/Desktop/DJ.Solution/DJ/bin/Debug/netcoreapp1.1/DJ.pdb
 /Users/Guest/Desktop/DJ.Solution/DJ/obj/Debug/netcoreapp1.1/DJ.dll
 /Users/Guest/Desktop/DJ.Solution/DJ/obj/Debug/netcoreapp1.1/DJ.pdb
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/bin/Debug/netcoreapp1.1/DJ.deps.json
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/bin/Debug/netcoreapp1.1/DJ.runtimeconfig.json
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/bin/Debug/netcoreapp1.1/DJ.runtimeconfig.dev.json
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/bin/Debug/netcoreapp1.1/DJ.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/bin/Debug/netcoreapp1.1/DJ.pdb
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/obj/Debug/netcoreapp1.1/DJ.AssemblyInfo.cs
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/obj/Debug/netcoreapp1.1/DJ.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ/obj/Debug/netcoreapp1.1/DJ.pdb

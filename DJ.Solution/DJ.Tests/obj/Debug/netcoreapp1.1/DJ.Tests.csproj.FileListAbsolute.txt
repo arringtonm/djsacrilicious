@@ -11,3 +11,16 @@
 /Users/Guest/Desktop/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.pdb
 /Users/Guest/Desktop/DJ.Solution/DJ.Tests/obj/Debug/netcoreapp1.1/DJ.Tests.dll
 /Users/Guest/Desktop/DJ.Solution/DJ.Tests/obj/Debug/netcoreapp1.1/DJ.Tests.pdb
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.Tests.deps.json
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.Tests.runtimeconfig.json
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.Tests.runtimeconfig.dev.json
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.Tests.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.Tests.pdb
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/bin/Debug/netcoreapp1.1/DJ.pdb
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/obj/Debug/netcoreapp1.1/DJ.Tests.AssemblyInfo.cs
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/obj/Debug/netcoreapp1.1/DJ.Tests.dll
+/Users/Guest/Desktop/djsacrilicious/DJ.Solution/DJ.Tests/obj/Debug/netcoreapp1.1/DJ.Tests.pdb

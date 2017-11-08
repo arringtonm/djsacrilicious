@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+<h2>Events [<a href="/events/add">Add Event</a>]</h2>
+@if (Model.Count != 0)
+{
+    @foreach(var djevent in Model)
+    {
+        <a href="/events/copy/@djevent.GetId()">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-1 stretch">
+                      <div class="time-block">
+                          <h4>@djevent.GetStart().ToString("MMM")</h4>
+                          <p>@djevent.GetStart().ToString("dd")</p>
+                      </div>
+                  </div>
+                  <div class="col-sm-11">
+                      <h4>@djevent.GetStart().ToString("h:mm tt") - @djevent.GetEnd().ToString("MMM dd h:mm tt")</h4>
+                      <h4>@djevent.GetName()</h4>
+                      <p>@djevent.GetVenueName() @djevent.GetVenueAddress()</p>
+                  </div>
+              </div>
+          </div>
+        </a>
+    }
+}
+else
+{
+    <em>There are no upcoming events scheduled 😭 💸 💸 💸</em>
+}
+<br><a href="/events/edit">edit an event</a>
+<br><a href="/">go home where you belong</a>
