@@ -1,0 +1,48 @@
+@media only screen and (max-width: 1000px) {
+  .header {
+    height: 140px; }
+  .header li {
+    padding-right: 0px;
+    text-align: right;
+    display: block;
+    line-height: 1.5;
+    & a {
+      padding: 0px 5px 0px 10px;
+      border-right: 5px solid magenta;
+      border-bottom: none;
+      @include font;
+      text-decoration: none;
+      &:hover {
+        background-color: aqua;
+        color: black; } } }
+  body {
+    @include flex(center,center,column);
+    min-height: 100vh;
+    background-image: url("../img/crowd-bw-grad-4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; }
+  .container {
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+  .gig {
+    @include flex(space-around,center);
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+  .sounds {
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+  .clients .gallery {
+    @include flex(space-around,center,row);
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    width: 90% }
+  .main p {
+    margin-left: 25px;
+    margin-right: 25px; } }

@@ -241,4 +241,72 @@ body {
 .gallery .logo-darker {
   filter: brightness(20%); }
 
+@media only screen and (max-width: 1000px) {
+  .header {
+    height: 140px; }
+
+  .header li {
+    padding-right: 0px;
+    text-align: right;
+    display: block;
+    line-height: 1.5; }
+    .header li a {
+      padding: 0px 5px 0px 10px;
+      border-right: 5px solid magenta;
+      border-bottom: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: white;
+      text-decoration: none; }
+      .header li a:hover {
+        background-color: aqua;
+        color: black; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("../img/crowd-bw-grad-4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; }
+
+  .container {
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+
+  .gig {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+
+  .sounds {
+    width: 100%;
+    margin-left: 25px;
+    margin-right: 25px; }
+
+  .clients .gallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    width: 90%; }
+
+  .main p {
+    margin-left: 25px;
+    margin-right: 25px; } }
+
 /*# sourceMappingURL=styles.css.map */
