@@ -1,7 +1,10 @@
 .gig {
   width: 1000px;
   @include flex(space-between,center);
-  height: 90px;
+  height: 100%;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  padding: 0px 15px 0px 0px;
 }
 
 .gig-icon {

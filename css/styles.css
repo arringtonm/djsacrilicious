@@ -145,7 +145,10 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  height: 90px; }
+  height: 100%;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  padding: 0px 15px 0px 0px; }
 
 .gig-icon {
   display: flex;
@@ -242,6 +245,9 @@ body {
   filter: brightness(20%); }
 
 @media only screen and (max-width: 1000px) {
+  .header .container {
+    margin-right: 15px; }
+
   .header {
     height: 200px; }
 
@@ -279,10 +285,7 @@ body {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url("../img/crowd-bw-grad-4.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; }
+    background-image: linear-gradient(120deg, aqua, magenta); }
 
   .container {
     width: 100%;
@@ -290,11 +293,7 @@ body {
     margin-right: 25px; }
 
   .gig {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
+    width: calc(100vw - 50px);
     margin-left: 25px;
     margin-right: 25px; }
 
@@ -317,6 +316,67 @@ body {
 
   .main p {
     margin-left: 25px;
-    margin-right: 25px; } }
+    margin-right: 25px; }
+
+  .footer {
+    height: 80px; }
+
+  .footer .social-media {
+    height: 40px; } }
+@media only screen and (max-width: 660px) {
+  .header .container {
+    margin-right: 15px; }
+
+  .header .logo {
+    height: 80px; }
+
+  .main button {
+    padding: 20px; } }
+@media only screen and (max-width: 479px) {
+  .header {
+    height: 220px; }
+
+  .header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; }
+
+  .header li {
+    display: inline;
+    line-height: 1.8;
+    border: none;
+    padding: 0px;
+    margin: 5px 5px; }
+    .header li a {
+      border-right: 0px;
+      border-bottom: 10px solid magenta;
+      padding: 0px; }
+    .header li:hover {
+      background-color: a; }
+
+  .header li a:hover {
+    border-right: none;
+    background-color: aqua; }
+
+  .header .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; }
+
+  .gig-title {
+    margin-left: 20px; }
+
+  .header .logo {
+    height: 60px;
+    margin-bottom: -20px; }
+
+  .main button {
+    margin-top: 300px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px; } }
 
 /*# sourceMappingURL=styles.css.map */

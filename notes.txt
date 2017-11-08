@@ -1,3 +1,26 @@
+TO DO WEDNESDAY (FRONT):
+
+  headers for sections
+
+  music spacing / what to add
+
+  copy-editing (michael later)
+
+  change brightness of image
+
+  consider "splash/app" mobile design
+
+  integrate with backend
+
+  build readme
+
+  add testimonials & clubs to "clients" section 
+
+
+
+
+
+
 aqua: #00ffff
 magenta: #FF00FF
 
