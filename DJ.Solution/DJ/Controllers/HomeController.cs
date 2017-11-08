@@ -18,7 +18,7 @@ namespace DJ.Controllers
     public ActionResult Events()
     {
 
-      List<Event> allEvents = Event.GetAll();
+      List<Event> allEvents = Event.GetAllOneMonthBefore();
       return View(allEvents);
     }
 
@@ -28,7 +28,7 @@ namespace DJ.Controllers
       Dictionary<string,object> model = new Dictionary<string, object>{};
       List<Event> allEvents = Event.GetAll();
       model.Add("all-events", allEvents);
-      model.Add("error", false);
+      model.Add("error", 0);
       return View(model);
     }
 
@@ -66,6 +66,42 @@ namespace DJ.Controllers
       }
     }
 
+    // Go to page with events
+    [HttpGet("/events/edit")]
+    public ActionResult EventEdit()
+    {
+      Dictionary<string,object> model = new Dictionary<string, object>{};
+      List<Event> allEvents = Event.GetAll();
+      model.Add("all-events", allEvents);
+      model.Add("selected-event", null);
+      model.Add("error", 0);
+      return View(model);
+    }
+
+    // // Go to page with events
+    // [HttpGet("/events/edit/{id}")]
+    // public ActionResult EventEdit(int id)
+    // {
+    //   Dictionary<string,object> model = new Dictionary<string, object>{};
+    //   List<Event> allEvents = Event.GetAll();
+    //   model.Add("all-events", allEvents);
+    //   model.Add("selected-event", null);
+    //   model.Add("error", 0);
+    //   return View(model);
+    // }
+
+    // Go to page with events
+    [HttpGet("/events/edit/{id}")]
+    public ActionResult EventEdit(int id)
+    {
+      Dictionary<string,object> model = new Dictionary<string, object>{};
+      List<Event> allEvents = Event.GetAll();
+      model.Add("all-events", allEvents);
+      model.Add("error", 0);
+      return View(model);
+    }
+
+    // Get Past events.
     [HttpGet("/events/past")]
     public ActionResult EventsPast()
     {
@@ -73,6 +109,7 @@ namespace DJ.Controllers
       return View("Events", pastEvents);
     }
 
+    // Get upcoming events.
     [HttpGet("/events/upcoming")]
     public ActionResult EventsUpcoming()
     {

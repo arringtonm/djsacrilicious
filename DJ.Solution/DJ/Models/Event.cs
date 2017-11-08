@@ -79,6 +79,7 @@ namespace DJ.Models
             }
             return upcomingEvents;
         }
+        
         // Get all for views, showing upcoming and back 1 month.
         public static List<Event> GetAllOneMonthBefore()
         {

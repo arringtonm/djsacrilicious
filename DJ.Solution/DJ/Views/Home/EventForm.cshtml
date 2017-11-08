@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-sm-3">
         <div class="form-side-events">
-            <h3>All Events</h3>
+            <h3>Events</h3>
             @if (Model["all-events"].Count != 0)
             {
                 @foreach(var djevent in Model["all-events"])
@@ -32,7 +32,7 @@
     </div>
     <div class="col-sm-9">
 
-            <h3>Add an Event...</h3>
+            <h3>Add an Event... </h3>
             <form action="/events/add" method="post">
                 <div class="form-group">
                     <label for='event-name'>Event name:</label>
@@ -60,7 +60,7 @@
                     <label for='venue-address'>Address:</label>
                     <input type="text" id="venue-address" name="venue-address" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-info">Submit Event</button>
+                <button type="submit" class="btn btn-info">Add Event</button>
                 <button type="reset" class="btn btn-default">Reset</button>
             </form>
 

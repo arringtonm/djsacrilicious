@@ -1,0 +1,81 @@
+@{
+  Layout = "_Layout";
+}
+<div class="row">
+  <div class="col-sm-3">
+    <div class="form-side-events">
+      <h3>All Events</h3>
+      <ul list="inline">
+        <li><span class="show-all">All</span></li>
+        <li><span class="show-upcoming">Upcoming</span></li>
+        <li><span class="show-past">Past</li>
+      </ul>
+      @if (Model["all-events"].Count != 0)
+      {
+        @foreach(var djevent in Model["all-events"])
+        {
+          @if(@djevent < DateTime.Now)
+          {
+            <div class="form-side-events-item past-item">
+          }
+          else
+          {
+            <div class="form-side-events-item item">
+          }
+          <p><span class="event-name">@djevent.GetName()</span></p>
+          <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
+          <p><span class="venue-name">@djevent.GetVenueName()</span></p>
+          <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
+          <p><span class="event-id hide">@djevent.GetId()</span></p>
+          </div>
+        }
+      }
+      else
+      {
+        <em>There are no events recorded 😭 💸 💸 💸</em>
+      }
+      </div>
+      </div>
+      <div class="col-sm-9">
+        <h3>Edit @Model["selected-event"].GetName()</h3>
+        <form action="" method="post">
+        <div class="form-group">
+        <label for='event-name'>Event name:</label>
+        <input type="text" id="event-name" name="event-name" class="form-control">
+         /*value="@Model["selected-event"].GetName()"*/
+        </div>
+        <div class="form-group">
+        <label for='event-start'>Starts @@:</label>
+        <input type="datetime-local" id="event-start" name="event-start">
+         /*value="@Model["selected-event"].GetStart()"*/
+        <label for='event-end'>Ends @@:</label>
+        <input type="datetime-local" id="event-end" name="event-end">
+         /*value="@Model["selected-event"].GetStart()"*/
+        </div>
+        @if (Model["error"] == 1)
+        {
+          <p class="text-danger">Date and time entry was invalid. Make sure you do not enter a time slot that <em>already exists.</em></p>
+        }
+        else if (Model["error"] == 2)
+        {
+          <p class="text-danger">Date and time entry was invalid. Make sure start and end time are <em>at least an hour apart</em>.</p>
+        }
+        <div class="form-group">
+        <label for='venue-name'>Venue:</label>
+        <input type="text" id="venue-name" name="venue-name" class="form-control">
+         /*value="@Model["selected-event"].GetVenueName()"*/
+        </div>
+        <div class="form-group">
+        <label for='venue-address'>Address:</label>
+        <input type="text" id="venue-address" name="venue-address" class="form-control">
+         /*value="@Model["selected-event"].GetVenueAddress()"*/
+        </div>
+        <button type="submit" class="btn btn-info">Edit Event</button>
+        <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+
+        <br><br><a href="/events">Return to Events</a>
+        <br><a href="/">Home</a>
+      }
+      </div>
+      </div>
