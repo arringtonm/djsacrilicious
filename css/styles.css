@@ -9,7 +9,7 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url("../img/crowd-bw-grad-4.jpg");
+  background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -115,7 +115,7 @@ body {
   flex-direction: row; }
 
 .logo {
-  filter: invert(100%);
+  filter: invert(100%) brightness(150%);
   height: 80px; }
 
 .header ul {
@@ -229,6 +229,9 @@ body {
 .gallery .logo-even-bigger {
   height: 120%; }
 
+.gallery .logo-way-bigger {
+  height: 170%; }
+
 .gallery .logo-even-bigger-again {
   height: 140%; }
 
@@ -243,6 +246,9 @@ body {
 
 .gallery .logo-darker {
   filter: brightness(20%); }
+
+.gallery .logo-dark {
+  filter: brightness(50%); }
 
 @media only screen and (max-width: 1000px) {
   .header .container {
