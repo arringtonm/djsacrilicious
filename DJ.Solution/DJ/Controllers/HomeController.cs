@@ -21,15 +21,25 @@ namespace DJ.Controllers
         return View(allEvents);
       }
 
+      [HttpGet("/events/add")]
+      public ActionResult EventForm()
+      {
+          Dictionary<string,object> model = new Dictionary<string, object>{};
+          List<Event> allEvents = Event.GetAll();
+          model.Add("all-events", allEvents);
+          model.Add("selected-event", null);
+          return View(model); 
+      }
+
       [HttpPost("/events/add")]
       public ActionResult EventAdd()
       {
+          DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
+          DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+          // Convert datetimes to mysql format.
+          Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
           try
           {
-              DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
-              DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
-              // Convert datetimes to mysql format.
-              Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
               newEvent.Save();
               return RedirectToAction("Events");
           }

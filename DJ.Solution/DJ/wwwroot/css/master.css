@@ -16,3 +16,18 @@ body {
     font-size: 24px;
     margin: 0;
 }
+
+
+.form-side-events {
+    height: 500px;
+}
+
+.form-side-events-item {
+    background-color: gray;
+    border: 1px solid black;
+}
+
+.form-side-events-item:hover {
+    background-color: gray;
+    border: 1px solid white;
+}
