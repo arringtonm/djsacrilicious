@@ -25,6 +25,7 @@ body {
 .form-side-events-item {
     background-color: gray;
     border: 1px solid black;
+    padding: 5px;
 }
 
 .form-side-events-item:hover {

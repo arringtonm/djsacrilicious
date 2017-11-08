@@ -17,6 +17,7 @@ namespace DJ.Controllers
       [HttpGet("/events")]
       public ActionResult Events()
       {
+
         List<Event> allEvents = Event.GetAll();
         return View(allEvents);
       }
@@ -27,8 +28,8 @@ namespace DJ.Controllers
           Dictionary<string,object> model = new Dictionary<string, object>{};
           List<Event> allEvents = Event.GetAll();
           model.Add("all-events", allEvents);
-          model.Add("selected-event", null);
-          return View(model); 
+          model.Add("error", false);
+          return View(model);
       }
 
       [HttpPost("/events/add")]
@@ -45,7 +46,11 @@ namespace DJ.Controllers
           }
           catch (MySqlException ex)
           {
-              return RedirectToAction("Events");
+              Dictionary<string,object> model = new Dictionary<string, object>{};
+              List<Event> allEvents = Event.GetAll();
+              model.Add("all-events", allEvents);
+              model.Add("error", true);
+              return View("EventForm", model);
           }
       }
 

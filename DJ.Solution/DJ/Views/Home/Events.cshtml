@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-<h1>Events</h1>
+<h2>Events [<a href="/events/add">Add Event</a>]</h2>
 @if (Model.Count != 0)
 {
     @foreach(var djevent in Model)
@@ -30,49 +30,4 @@ else
 }
 
 
-<br><a href="/events/add">Add Event</a>
-/*<br><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add Event</button>*/
 <br><a href="/">go home where you belong</a>
-
-<!-- Trigger the modal with a button -->
-
-/*<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Add an Event...</h4>
-          </div>
-          <div class="modal-body">
-            <form action="/events/add" method="post">
-                <div class="form-group">
-                    <label for='event-name'>Event name:</label>
-                    <input type="text" id="event-name" name="event-name" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for='event-start'>Starts @@:</label>
-                    <input type="datetime-local" id="event-start" name="event-start">
-                    <label for='event-end'>Ends @@:</label>
-                    <input type="datetime-local" id="event-end" name="event-end">
-                </div>
-                <div class="form-group">
-                    <label for='venue-name'>Venue:</label>
-                    <input type="text" id="venue-name" name="venue-name" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for='venue-address'>Address:</label>
-                    <input type="text" id="venue-address" name="venue-address" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-info">Submit Event</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-    </div>
-
-  </div>
-</div>*/
