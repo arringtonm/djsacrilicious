@@ -329,7 +329,7 @@ body {
 
   .footer .social-media {
     height: 40px; } }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
   .header {
     height: 190px; }
 
