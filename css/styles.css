@@ -331,7 +331,7 @@ body {
     height: 40px; } }
 @media only screen and (max-width: 750px) {
   .header {
-    height: 220px; }
+    height: 190px; }
 
   .header ul {
     display: flex;
@@ -368,12 +368,15 @@ body {
 
   .header .logo {
     height: 60px;
-    margin-bottom: -20px; }
+    margin-bottom: -50px; }
 
   .main button {
     margin-top: 300px;
     margin-left: 25px;
     margin-right: 25px;
-    padding: 10px; } }
+    padding: 10px; }
+
+  .footer {
+    display: none; } }
 
 /*# sourceMappingURL=styles.css.map */
