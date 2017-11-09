@@ -291,6 +291,31 @@ h3 {
 .contact h3 {
   margin-bottom: 50px; }
 
+.testimonials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
+  margin-bottom: 0px; }
+
+.testimonials p {
+  border-left: 7px solid magenta;
+  padding-left: 20px;
+  padding-top: 0px;
+  text-align: justify;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-style: italic;
+  width: 70%; }
+
+.venues {
+  width: 1000px; }
+
+#venues-played {
+  margin-top: -100px; }
+
 @media only screen and (max-width: 1000px) {
   .main {
     display: flex;
@@ -391,9 +416,6 @@ h3 {
   .footer .social-media {
     height: 40px; } }
 @media only screen and (max-width: 768px) {
-  h3 {
-    margin-right: 25px; }
-
   .header {
     height: 200px; }
 
@@ -403,6 +425,33 @@ h3 {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap; }
+
+  .clients {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
+
+  .clients .gallery {
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    max-width: calc(90% - 50px); }
+
+  .sounds, .venues, .contact {
+    max-width: calc(100vw - 50px);
+    margin-left: 25px;
+    margin-right: 25px; }
+
+  .main p {
+    margin-left: 25px;
+    margin-right: 25px; }
+
+  .clients {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
 
   .header li {
     display: inline;
@@ -442,31 +491,6 @@ h3 {
 
   .footer {
     display: none; } }
-.testimonials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 1000px;
-  margin-bottom: 0px; }
-
-.testimonials p {
-  border-left: 7px solid magenta;
-  padding-left: 20px;
-  padding-top: 0px;
-  text-align: justify;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px;
-  font-style: italic;
-  width: 70%; }
-
-.venues {
-  width: 1000px; }
-
-#venues-played {
-  margin-top: -100px; }
-
 .admin {
   display: flex;
   justify-content: center;
