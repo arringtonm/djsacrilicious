@@ -250,6 +250,55 @@ body {
 .gallery .logo-dark {
   filter: brightness(50%); }
 
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 190px; }
+
+  .header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; }
+
+  .header li {
+    display: inline;
+    line-height: 1.8;
+    border: none;
+    padding: 0px;
+    margin: 5px 5px; }
+    .header li a {
+      border-right: 0px;
+      border-bottom: 10px solid magenta;
+      padding: 0px; }
+    .header li:hover {
+      background-color: a; }
+
+  .header li a:hover {
+    border-right: none;
+    background-color: aqua; }
+
+  .header .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column; }
+
+  .gig-title {
+    margin-left: 20px; }
+
+  .header .logo {
+    height: 60px;
+    margin-bottom: -50px; }
+
+  .main button {
+    margin-top: 300px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px; }
+
+  .footer {
+    display: none; } }
 @media only screen and (max-width: 1000px) {
   .header .container {
     margin-right: 15px; }
@@ -329,54 +378,5 @@ body {
 
   .footer .social-media {
     height: 40px; } }
-@media only screen and (max-width: 768px) {
-  .header {
-    height: 190px; }
-
-  .header ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap; }
-
-  .header li {
-    display: inline;
-    line-height: 1.8;
-    border: none;
-    padding: 0px;
-    margin: 5px 5px; }
-    .header li a {
-      border-right: 0px;
-      border-bottom: 10px solid magenta;
-      padding: 0px; }
-    .header li:hover {
-      background-color: a; }
-
-  .header li a:hover {
-    border-right: none;
-    background-color: aqua; }
-
-  .header .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column; }
-
-  .gig-title {
-    margin-left: 20px; }
-
-  .header .logo {
-    height: 60px;
-    margin-bottom: -50px; }
-
-  .main button {
-    margin-top: 300px;
-    margin-left: 25px;
-    margin-right: 25px;
-    padding: 10px; }
-
-  .footer {
-    display: none; } }
 
 /*# sourceMappingURL=styles.css.map */
