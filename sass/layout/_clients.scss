@@ -1,8 +1,12 @@
+.clients {
+  @include flex(center,center,column);
+}
+
 .clients .gallery {
-  @include flex(space-around,center);
+  @include flex(space-around,center, row);
   flex-wrap: wrap;
-  margin-bottom: 250px;
-  margin-top: 150px;
+  margin-bottom: 100px;
+  margin-top: 50px;
   width: 1000px; }
 
 .gallery .logo {
@@ -29,15 +33,13 @@
   height: 120%; }
 
 .gallery .logo-way-bigger {
-  height: 170%;
-}
+  height: 170%; }
 
 .gallery .logo-even-bigger-again {
   height: 140%; }
 
 .gallery .trans-up {
-  transform: translateY(-10px);
-}
+  transform: translateY(-10px); }
 
 .gallery .trans-down {
   transform: translateY(10px); }

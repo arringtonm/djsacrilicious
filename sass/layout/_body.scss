@@ -1,11 +1,18 @@
 body {
   @include flex(center,center,column);
   min-height: 100vh;
+  background-image: linear-gradient(120deg,aqua,magenta);
   background-image: url("../img/background.png");
-  // background-image: url("../img/crowd-bw-grad-4.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
+
+h3 {
+  @include font(24px,black,700);
+  text-align: right;
+  margin-top: 100px;
+  margin-bottom: 25px;
+ }
 
 .main {
   @include flex(flex-start,center,column);
