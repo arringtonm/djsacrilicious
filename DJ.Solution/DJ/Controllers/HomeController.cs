@@ -107,8 +107,6 @@ namespace DJ.Controllers
       DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
       DateTime end = Convert.ToDateTime(Request.Form["event-end"]);
       Event selectedEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"], id);
-      // selectedEvent.Update();
-      // return RedirectToAction("Events");
       try
       {
         //Checks that input start time and end time are valid.
