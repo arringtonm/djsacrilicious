@@ -292,6 +292,14 @@ h3 {
   margin-bottom: 50px; }
 
 @media only screen and (max-width: 1000px) {
+  .main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    flex: 1 0 auto; }
+
   h3 {
     margin-right: 25px; }
 
@@ -353,9 +361,9 @@ h3 {
     margin-right: 25px; }
 
   .clients {
-    width: calc(100vw -50px);
     margin-left: 25px;
-    margin-right: 25px; }
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
 
   .clients .gallery {
     display: flex;
@@ -367,7 +375,7 @@ h3 {
     margin-right: 25px;
     margin-bottom: 250px;
     margin-top: 150px;
-    width: 90%; }
+    max-width: calc(90% - 50px); }
 
   p {
     margin-left: 25px;

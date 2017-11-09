@@ -1,6 +1,10 @@
 
 
 @media only screen and (max-width: 1000px) {
+  .main {
+    @include flex(flex-start,center,column);
+    width: 100%;
+    flex: 1 0 auto; }
   h3 { margin-right: 25px; }
   .header .container {
     margin-right: 15px; }
@@ -48,9 +52,9 @@
     margin-left: 25px;
     margin-right: 25px; }
   .clients {
-    width: calc(100vw -50px) ;
     margin-left: 25px;
-    margin-right: 25px; }
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
   .clients .gallery {
     @include flex(space-around,center,row);
     flex-wrap: wrap;
@@ -58,11 +62,10 @@
     margin-right: 25px;
     margin-bottom: 250px;
     margin-top: 150px;
-    width: 90% }
-    p {
-      margin-left: 25px;
-      margin-right: 25px;
-    }
+    max-width: calc(90% - 50px); }
+  p {
+    margin-left: 25px;
+    margin-right: 25px; }
   .main p {
     margin-left: 25px;
     margin-right: 25px; }
