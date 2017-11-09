@@ -18,8 +18,7 @@
   height: 80px; }
 
 .header ul {
-  transform: translateY(6px);
- }
+  transform: translateY(6px); }
 .header li {
   padding: 0px 15px;
   display: inline;
@@ -30,11 +29,6 @@
     text-decoration: none;
     &:hover {
       background-color: aqua;
-      color: black;
-    }
-  }
-}
-
+      color: black; } } }
 .header li:last-child {
-  padding-right: 0px;
-}
+  padding-right: 0px; }

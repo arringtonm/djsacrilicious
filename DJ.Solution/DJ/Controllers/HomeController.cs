@@ -11,18 +11,18 @@ namespace DJ.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
-    }
-
-    [HttpGet("/events")]
-    public ActionResult Events()
-    {
-
       List<Event> allEvents = Event.GetAllOneMonthBefore();
       return View(allEvents);
     }
-
-    [HttpGet("/events/add")]
+    //
+    // [HttpGet("/events")]
+    // public ActionResult Events()
+    // {
+    //
+    //   List<Event> allEvents = Event.GetAllOneMonthBefore();
+    //   return View(allEvents);
+    // }
+    [HttpGet("/events/admin/add")]
     public ActionResult EventForm()
     {
       Dictionary<string,object> model = new Dictionary<string, object>{};
@@ -32,16 +32,16 @@ namespace DJ.Controllers
       return View(model);
     }
 
-    [HttpPost("/events/add")]
+    [HttpPost("/events/admin/add")]
     public ActionResult EventAdd()
     {
       DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
-      DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+      DateTime end = Convert.ToDateTime(Request.Form["event-end"]);
       Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
       try
       {
         //Checks that input start time and end time are valid.
-        if (start.Subtract(end).TotalHours < 1)
+        if (end.Subtract(start).TotalHours < 1)
         {
           throw new InvalidStartOrEndException();
         }
@@ -67,7 +67,7 @@ namespace DJ.Controllers
     }
 
     // Go to page with events to edit.
-    [HttpGet("/events/edit")]
+    [HttpGet("/events/admin/edit")]
     public ActionResult EventsEdit()
     {
       Dictionary<string,object> model = new Dictionary<string, object>{};
@@ -101,22 +101,24 @@ namespace DJ.Controllers
     //   return View(model);
     // }
 
-    [HttpPost("/events/edit/{id}")]
+    [HttpPost("/events/admin/edit/{id}")]
     public ActionResult EventEdit(int id)
     {
       DateTime start = Convert.ToDateTime(Request.Form["event-start"]);
-      DateTime end = Convert.ToDateTime(Request.Form["event-start"]);
+      DateTime end = Convert.ToDateTime(Request.Form["event-end"]);
       Event selectedEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"], id);
+      // selectedEvent.Update();
+      // return RedirectToAction("Events");
       try
       {
         //Checks that input start time and end time are valid.
-        if (start.Subtract(end).TotalHours > 1)
+        if (end.Subtract(start).TotalHours < 1)
         {
           throw new InvalidStartOrEndException();
         }
-        selectedEvent.Update();
-        return RedirectToAction("Events");
-        // Maybe this should be a success page instead.
+          selectedEvent.Update();
+          return RedirectToAction("EventsEdit");
+          // Maybe this should be a success page instead.
       }
       catch (InvalidStartOrEndException ex)
       {
@@ -136,21 +138,29 @@ namespace DJ.Controllers
       }
     }
 
-    // Get Past events.
-    [HttpGet("/events/past")]
-    public ActionResult EventsPast()
+    [HttpPost("/events/admin/delete/{id}")]
+    public ActionResult EventDelete(int id)
     {
-      List<Event> pastEvents = Event.GetAllByDate(false);
-      return View("Events", pastEvents);
+      Event selectedEvent = Event.Find(id);
+      selectedEvent.Delete();
+      return RedirectToAction("EventsEdit");
     }
 
-    // Get upcoming events.
-    [HttpGet("/events/upcoming")]
-    public ActionResult EventsUpcoming()
-    {
-      List<Event> upcomingEvents = Event.GetAllByDate();
-      return View("Events", upcomingEvents);
-    }
+    // // Get Past events.
+    // [HttpGet("/events/past")]
+    // public ActionResult EventsPast()
+    // {
+    //   List<Event> pastEvents = Event.GetAllByDate(false);
+    //   return View("Events", pastEvents);
+    // }
+    //
+    // // Get upcoming events.
+    // [HttpGet("/events/upcoming")]
+    // public ActionResult EventsUpcoming()
+    // {
+    //   List<Event> upcomingEvents = Event.GetAllByDate();
+    //   return View("Events", upcomingEvents);
+    // }
 
   }
 }

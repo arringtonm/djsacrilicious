@@ -1,9 +1,8 @@
 @{
     Layout = "_Layout";
 }
-<div class="row">
-    <div class="col-sm-3">
-        <div class="form-side-events">
+
+
             <h3>Events</h3>
             @if (Model["all-events"].Count != 0)
             {
@@ -11,7 +10,7 @@
                 {
                         @if(djevent.GetStart() < DateTime.Now)
                         {
-                          <div class="form-side-events-item past-item item">
+                          <div class="past-item item">
                           <p><span class="event-name">@djevent.GetName()</span></p>
                           <p>@djevent.GetStart().ToString("MMM d h:MM tt") - @djevent.GetEnd().ToString("MMM d h:MM tt")</p>
                           <p><span class="venue-name">@djevent.GetVenueName()</span></p>
@@ -38,7 +37,7 @@
     <div class="col-sm-9">
 
             <h3>Add an Event... </h3>
-            <form action="/events/add" method="post">
+            <form action="/events/admin/add" method="post">
                 <div class="form-group">
                     <label for='event-name'>Event name:</label>
                     <input type="text" id="event-name" name="event-name" class="form-control">
@@ -69,7 +68,6 @@
                 <button type="reset" class="btn btn-default">Reset</button>
             </form>
 
-            <br><br><a href="/events">Return to Events</a>
-            <br><a href="/">Home</a>
+            <br><br><a href="/">Home</a>
     </div>
 </div>
