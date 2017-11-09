@@ -1,0 +1,12 @@
+.contact {
+  width: 1000px;
+  margin-bottom: 100px; }
+
+.contact p {
+  @include font(20px,black,400);
+  padding-top: 0px;
+}
+
+.contact h3 {
+  margin-bottom: 50px;
+}

@@ -1,9 +1,4 @@
 .sounds {
   width: 1000px;
-  @include flex(center, center, column);
-  margin-top: 100px;
-}
-
-.sounds-mix {
-  margin-bottom: 50px;
+  // @include flex(flex-start, flex-start); }
 }

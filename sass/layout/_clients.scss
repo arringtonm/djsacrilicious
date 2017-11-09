@@ -1,6 +1,5 @@
 .clients {
-  @include flex(center,center,column);
-}
+  @include flex(center,center,column); }
 
 .clients .gallery {
   @include flex(space-around,center, row);
