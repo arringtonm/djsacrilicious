@@ -43,8 +43,12 @@
     width: calc(100vw - 50px);
     margin-left: 25px;
     margin-right: 25px; }
-  .sounds {
-    width: 100%;
+  .sounds, .venues, .contact {
+    width: calc(100vw - 50px);
+    margin-left: 25px;
+    margin-right: 25px; }
+  .clients {
+    width: calc(100vw -50px) ;
     margin-left: 25px;
     margin-right: 25px; }
   .clients .gallery {
@@ -55,6 +59,10 @@
     margin-bottom: 250px;
     margin-top: 150px;
     width: 90% }
+    p {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
   .main p {
     margin-left: 25px;
     margin-right: 25px; }
@@ -65,8 +73,9 @@
 
 
 @media only screen and (max-width: 768px) {
+  h3 { margin-right: 25px; }
   .header {
-    height: 190px; }
+    height: 200px; }
   .header ul {
     @include flex(center,center);
     flex-wrap: wrap;  }
@@ -90,7 +99,7 @@
   .gig-title {
      margin-left: 20px; }
   .header .logo {
-    height: 60px;
+    height: 58px;
     margin-bottom: -50px; }
   .main button {
     margin-top: 300px;

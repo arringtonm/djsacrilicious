@@ -25,6 +25,8 @@
     }
     else
     {
+
+      <div class="gig-edit">
       <div class="item edit-item">
       <p><span class="event-name">@djevent.GetName()</span></p>
       <p>@djevent.GetStart().ToString("MMM d h:mm tt") - @djevent.GetEnd().ToString("MMM d h:mm tt")</p>
@@ -33,7 +35,8 @@
       <p><span class="event-id hide">@djevent.GetId()</span></p>
       <p><span class="event-start hide">@djevent.GetStart().ToString("s")</span></p>
       <p><span class="event-end hide">@djevent.GetEnd().ToString("s")</span></p>
-      </div> // end div of each event
+      </div> 
+      </div>
     }
   }
 }

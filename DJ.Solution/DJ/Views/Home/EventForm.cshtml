@@ -21,11 +21,13 @@
     }
     else
     {
+      <div class="gig-edit">
       <div class="item">
       <p><span class="event-name">@djevent.GetName()</span></p>
       <p>@djevent.GetStart().ToString("MMM d h:mm tt") - @djevent.GetEnd().ToString("MMM d h:mm tt")</p>
       <p><span class="venue-name">@djevent.GetVenueName()</span></p>
       <p><span class="venue-address">@djevent.GetVenueAddress()</span></p>
+      </div>
       </div>
     }
   }

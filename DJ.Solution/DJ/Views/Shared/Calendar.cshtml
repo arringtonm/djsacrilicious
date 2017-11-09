@@ -3,26 +3,50 @@
   {
       @foreach(var djevent in Model)
       {
-          /*<a href="/events/copy/@djevent.GetId()">*/
-            <div class="gig">
-              <div class="gig-icon">
-                <div class="gig-icon-month">
-                  @djevent.GetStart().ToString("MMM")
-                </div>
-                <div class="gig-icon-day">
-                  @djevent.GetStart().ToString("dd")
-                </div>
-              </div>
-              <div class="gig-title">
-                @djevent.GetName()
-              </div>
-              <div class="gig-time">
-                @djevent.GetStart().ToString("h:mm tt") - @djevent.GetEnd().ToString("h:mm tt")
-              </div>
-              <div class="gig-time">
-                @djevent.GetVenueName() @djevent.GetVenueAddress()
-              </div>
-            </div>
+            @if(djevent.GetStart() < DateTime.Now)
+           {
+               <div class="gig gig-old">
+                 <div class="gig-icon">
+                   <div class="gig-icon-month">
+                     @djevent.GetStart().ToString("MMM")
+                   </div>
+                   <div class="gig-icon-day">
+                     @djevent.GetStart().ToString("dd")
+                   </div>
+                 </div>
+                 <div class="gig-title">
+                   @djevent.GetName()
+                 </div>
+                 <div class="gig-time">
+                   @djevent.GetStart().ToString("h:mm tt") - @djevent.GetEnd().ToString("h:mm tt")
+                 </div>
+                 <div class="gig-time">
+                   @djevent.GetVenueName() @djevent.GetVenueAddress()
+                 </div>
+               </div>
+           }
+           else
+           {
+               <div class="gig">
+               <div class="gig-icon">
+               <div class="gig-icon-month">
+               @djevent.GetStart().ToString("MMM")
+               </div>
+               <div class="gig-icon-day">
+               @djevent.GetStart().ToString("dd")
+               </div>
+               </div>
+               <div class="gig-title">
+               @djevent.GetName()
+               </div>
+               <div class="gig-time">
+               @djevent.GetStart().ToString("h:mm tt") - @djevent.GetEnd().ToString("h:mm tt")
+               </div>
+               <div class="gig-time">
+               @djevent.GetVenueName() @djevent.GetVenueAddress()
+               </div>
+             </div>
+            }
           /*</a>*/
       }
   }

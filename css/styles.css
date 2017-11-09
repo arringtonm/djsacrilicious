@@ -160,6 +160,9 @@ h3 {
   border: 1px solid black;
   padding: 0px 15px 0px 0px; }
 
+.gig-old {
+  border: 1px solid #333; }
+
 .gig:first-of-type {
   margin-top: 50px; }
 
@@ -171,6 +174,15 @@ h3 {
   background-color: black;
   padding: 5px 15px;
   border: 1px solid black; }
+
+.gig-old .gig-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333;
+  padding: 5px 15px;
+  border: 1px solid #333; }
 
 .gig-icon-month {
   font-family: 'Open Sans', sans-serif;
@@ -195,6 +207,9 @@ h3 {
   font-size: 14px;
   font-weight: 300;
   color: black; }
+
+.gig-old .gig-time, .gig-old .gig-title {
+  color: #333; }
 
 .calendar {
   margin-top: 100px;
@@ -332,8 +347,13 @@ h3 {
     margin-left: 25px;
     margin-right: 25px; }
 
-  .sounds {
-    width: 100%;
+  .sounds, .venues, .contact {
+    width: calc(100vw - 50px);
+    margin-left: 25px;
+    margin-right: 25px; }
+
+  .clients {
+    width: calc(100vw -50px);
     margin-left: 25px;
     margin-right: 25px; }
 
@@ -349,6 +369,10 @@ h3 {
     margin-top: 150px;
     width: 90%; }
 
+  p {
+    margin-left: 25px;
+    margin-right: 25px; }
+
   .main p {
     margin-left: 25px;
     margin-right: 25px; }
@@ -359,8 +383,11 @@ h3 {
   .footer .social-media {
     height: 40px; } }
 @media only screen and (max-width: 768px) {
+  h3 {
+    margin-right: 25px; }
+
   .header {
-    height: 190px; }
+    height: 200px; }
 
   .header ul {
     display: flex;
@@ -396,7 +423,7 @@ h3 {
     margin-left: 20px; }
 
   .header .logo {
-    height: 60px;
+    height: 58px;
     margin-bottom: -50px; }
 
   .main button {
