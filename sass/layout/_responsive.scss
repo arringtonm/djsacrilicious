@@ -76,12 +76,35 @@
 
 
 @media only screen and (max-width: 768px) {
-  h3 { margin-right: 25px; }
+  // h3 { margin-right: 25px; }
   .header {
     height: 200px; }
   .header ul {
     @include flex(center,center);
     flex-wrap: wrap;  }
+  .clients {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
+  .clients .gallery {
+    // @include flex(space-around,center,row);
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    max-width: calc(90% - 50px); }
+  .sounds, .venues, .contact {
+    max-width: calc(100vw - 50px);
+    margin-left: 25px;
+    margin-right: 25px; }
+  .main p {
+    margin-left: 25px;
+    margin-right: 25px; }
+  .clients {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
   .header li {
     display: inline;
     line-height: 1.8;
@@ -111,6 +134,8 @@
     padding: 10px; }
   .footer {
     display: none; } }
+
+
 
 // @media only screen and (max-width: 660px) {
 //   .header .container {
