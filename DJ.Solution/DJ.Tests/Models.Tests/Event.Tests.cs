@@ -114,5 +114,17 @@ namespace DJ.Models.Tests
             List<Event> expectedList = new List<Event>{event1, event2, event3};
             CollectionAssert.AreEqual(result, expectedList);
         }
+
+        [TestMethod]
+        public void ValidateDates_ChecksIfDatesExistInDatabase_false()
+        {
+          Event event1 = new Event(Convert.ToDateTime("2017-04-16 22:00"), Convert.ToDateTime("2017-04-17 02:00"), "Macy's Spring Nights", "Macy's", "123 Sesame St");
+          event1.Save();
+          Event event2 = new Event(Convert.ToDateTime("2017-04-16 23:00"), Convert.ToDateTime("2017-04-17 03:00"), "A Conlicting Time", "Macy's", "123 Sesame St");
+          bool isValid = event2.ValidateDates();
+
+          Assert.AreEqual(false, isValid);
+
+        }
     }
 }

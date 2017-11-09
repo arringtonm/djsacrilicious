@@ -48,6 +48,33 @@ namespace DJ.Models
             SetId(id);
         }
 
+        // To prevent overlap, validate dates.
+        public bool ValidateDates()
+        {
+          MySqlConnection conn = DB.Connection();
+          conn.Open();
+
+          var cmd = conn.CreateCommand() as MySqlCommand;
+          cmd.CommandText = @"SELECT COUNT(*) FROM events WHERE @EndTime >= start_time AND end_time >= @StartTime;";
+          cmd.Parameters.Add(new MySqlParameter("@EndTime", this.GetEnd()));
+          cmd.Parameters.Add(new MySqlParameter("@StartTime", this.GetStart()));
+          var rdr = cmd.ExecuteReader() as MySqlDataReader;
+          int overlappingDates = 0;
+          while(rdr.Read())
+          {
+            overlappingDates = rdr.GetInt32(0);
+          }
+          Console.WriteLine(overlappingDates);
+          if (overlappingDates > 0)
+          {
+            return false;
+          }
+          else
+          {
+            return true;
+          }
+        }
+
         // Get all events in database by current date, by default will return upcoming. If false, will return past events.
         public static List<Event> GetAllByDate(bool upcoming = true)
         {
