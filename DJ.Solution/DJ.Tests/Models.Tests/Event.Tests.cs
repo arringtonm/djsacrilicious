@@ -116,14 +116,26 @@ namespace DJ.Models.Tests
         }
 
         [TestMethod]
-        public void ValidateDates_ChecksIfDatesExistInDatabase_false()
+        public void ChecksIfDatesOverlap_ChecksIfDatesExistInDatabase_true()
         {
           Event event1 = new Event(Convert.ToDateTime("2017-04-16 22:00"), Convert.ToDateTime("2017-04-17 02:00"), "Macy's Spring Nights", "Macy's", "123 Sesame St");
           event1.Save();
           Event event2 = new Event(Convert.ToDateTime("2017-04-16 23:00"), Convert.ToDateTime("2017-04-17 03:00"), "A Conlicting Time", "Macy's", "123 Sesame St");
-          bool isValid = event2.ValidateDates();
+          bool conflict = event2.ChecksIfDatesOverlap();
 
-          Assert.AreEqual(false, isValid);
+          Assert.AreEqual(true, conflict);
+
+        }
+
+        [TestMethod]
+        public void ChecksIfDatesOverlap_ChecksIfDatesExistInDatabaseButExcludesItself_false()
+        {
+          Event event1 = new Event(Convert.ToDateTime("2017-04-16 22:00"), Convert.ToDateTime("2017-04-17 02:00"), "Macy's Spring Nights", "Macy's", "123 Sesame St");
+          event1.Save();
+          Event findEvent1 = Event.Find(event1.GetId());
+          bool conflict = findEvent1.ChecksIfDatesOverlap();
+
+          Assert.AreEqual(false, conflict);
 
         }
     }

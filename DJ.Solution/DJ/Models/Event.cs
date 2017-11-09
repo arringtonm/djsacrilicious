@@ -49,29 +49,31 @@ namespace DJ.Models
         }
 
         // To prevent overlap, validate dates.
-        public bool ValidateDates()
+        public bool ChecksIfDatesOverlap()
         {
           MySqlConnection conn = DB.Connection();
           conn.Open();
 
           var cmd = conn.CreateCommand() as MySqlCommand;
-          cmd.CommandText = @"SELECT COUNT(*) FROM events WHERE @EndTime >= start_time AND end_time >= @StartTime;";
+          cmd.CommandText = @"SELECT COUNT(*) FROM events WHERE @EndTime >= start_time AND end_time >= @StartTime AND id != @EventId;";
           cmd.Parameters.Add(new MySqlParameter("@EndTime", this.GetEnd()));
           cmd.Parameters.Add(new MySqlParameter("@StartTime", this.GetStart()));
+          cmd.Parameters.Add(new MySqlParameter("@EventId", this.GetId()));
           var rdr = cmd.ExecuteReader() as MySqlDataReader;
           int overlappingDates = 0;
           while(rdr.Read())
           {
             overlappingDates = rdr.GetInt32(0);
           }
-          Console.WriteLine(overlappingDates);
           if (overlappingDates > 0)
           {
-            return false;
+
+            return true;
           }
           else
           {
-            return true;
+
+            return false;
           }
         }
 
@@ -117,7 +119,7 @@ namespace DJ.Models
             conn.Open();
 
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @MonthBefore;";
+            cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @MonthBefore ORDER BY start_time, end_time;";
             cmd.Parameters.Add(new MySqlParameter("@MonthBefore", monthBeforeString));
             var rdr = cmd.ExecuteReader() as MySqlDataReader;
             while (rdr.Read())

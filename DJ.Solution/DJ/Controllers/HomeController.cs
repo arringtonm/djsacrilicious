@@ -14,14 +14,7 @@ namespace DJ.Controllers
       List<Event> allEvents = Event.GetAllOneMonthBefore();
       return View(allEvents);
     }
-    //
-    // [HttpGet("/events")]
-    // public ActionResult Events()
-    // {
-    //
-    //   List<Event> allEvents = Event.GetAllOneMonthBefore();
-    //   return View(allEvents);
-    // }
+
     [HttpGet("/events/admin/add")]
     public ActionResult EventForm()
     {
@@ -40,13 +33,26 @@ namespace DJ.Controllers
       Event newEvent = new Event(start, end, Request.Form["event-name"], Request.Form["venue-name"], Request.Form["venue-address"]);
       try
       {
-        //Checks that input start time and end time are valid.
+        //Checks that input start time and end time are an hour apart.
         if (end.Subtract(start).TotalHours < 1)
         {
           throw new InvalidStartOrEndException();
         }
+        // checks that input doesn't overlap existing dates.
+        else if (newEvent.ChecksIfDatesOverlap())
+        {
+          throw new InvalidStartOrEndException("Overlap");
+        }
         newEvent.Save();
-        return RedirectToAction("Events");
+        return RedirectToAction("EventForm");
+      }
+      catch (InvalidStartOrEndException ex) when (ex.Message == "Overlap")
+      {
+        Dictionary<string,object> model = new Dictionary<string, object>{};
+        List<Event> allEvents = Event.GetAll();
+        model.Add("all-events", allEvents);
+        model.Add("error", 2);
+        return View("EventForm", model); // Not sure if this has to be in every catch.
       }
       catch (InvalidStartOrEndException ex)
       {
@@ -64,6 +70,7 @@ namespace DJ.Controllers
         model.Add("error", 2);
         return View("EventForm", model);
       }
+      // TODO maybe these can be refactored.
     }
 
     // Go to page with events to edit.
@@ -78,29 +85,6 @@ namespace DJ.Controllers
       return View("EventEdit",model);
     }
 
-    // // Go to page with events
-    // [HttpGet("/events/edit/{id}")]
-    // public ActionResult EventEdit(int id)
-    // {
-    //   Dictionary<string,object> model = new Dictionary<string, object>{};
-    //   List<Event> allEvents = Event.GetAll();
-    //   model.Add("all-events", allEvents);
-    //   model.Add("selected-event", null);
-    //   model.Add("error", 0);
-    //   return View(model);
-    // }
-
-    // Go to page with events
-    // [HttpGet("/events/edit/{id}")]
-    // public ActionResult EventEdit(int id)
-    // {
-    //   Dictionary<string,object> model = new Dictionary<string, object>{};
-    //   List<Event> allEvents = Event.GetAll();
-    //   model.Add("all-events", allEvents);
-    //   model.Add("error", 0);
-    //   return View(model);
-    // }
-
     [HttpPost("/events/admin/edit/{id}")]
     public ActionResult EventEdit(int id)
     {
@@ -114,9 +98,22 @@ namespace DJ.Controllers
         {
           throw new InvalidStartOrEndException();
         }
-          selectedEvent.Update();
-          return RedirectToAction("EventsEdit");
-          // Maybe this should be a success page instead.
+        // Checks if input is overlaps.
+        else if (selectedEvent.ChecksIfDatesOverlap())
+        {
+          throw new InvalidStartOrEndException("Overlap");
+        }
+        selectedEvent.Update();
+        return RedirectToAction("EventsEdit");
+        // TODO Maybe this should be a success page instead.
+      }
+      catch (InvalidStartOrEndException ex) when (ex.Message == "Overlap")
+      {
+        Dictionary<string,object> model = new Dictionary<string, object>{};
+        List<Event> allEvents = Event.GetAll();
+        model.Add("all-events", allEvents);
+        model.Add("error", 2);
+        return View("EventEdit", model);
       }
       catch (InvalidStartOrEndException ex)
       {
