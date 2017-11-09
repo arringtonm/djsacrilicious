@@ -11,8 +11,7 @@ h3 {
   @include font(24px,black,700);
   text-align: right;
   margin-top: 100px;
-  margin-bottom: 25px;
- }
+  margin-bottom: 25px; }
 
 .main {
   @include flex(flex-start,center,column);

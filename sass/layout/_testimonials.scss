@@ -1,7 +1,7 @@
 .testimonials {
   @include flex(center,center,column);
   width: 1000px;
-  margin-bottom: 100px; }
+  margin-bottom: 0px; }
 
 .testimonials p {
   border-left: 7px solid magenta;
@@ -13,3 +13,6 @@
   margin-bottom: 50px;
   font-style: italic;
   width: 70%; }
+
+.venues {
+  width: 1000px; }
