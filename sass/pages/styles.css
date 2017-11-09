@@ -437,10 +437,9 @@ h3 {
   color: black; }
 
 .admin h3 {
-  text-align: right;
   font-family: 'Open Sans', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 400;
   color: black; }
 
 input, select, textarea {
@@ -456,7 +455,7 @@ label {
   margin-top: 20px; }
 
 #delete {
-  transform: translateY(-357px); }
+  transform: translateY(-300px); }
 
 button {
   margin-top: 200px;
@@ -479,9 +478,6 @@ button {
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5); }
   button:focus {
     outline: 0; }
-  button:disabled {
-    cursor: not-allowed;
-    background-color: #FF66FF; }
 
 .gig-edit {
   width: 1000px;
