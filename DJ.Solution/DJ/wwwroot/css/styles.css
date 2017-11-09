@@ -21,7 +21,7 @@ h3 {
   font-weight: 700;
   color: black;
   text-align: right;
-  margin-top: 100px;
+  margin-top: 200px;
   margin-bottom: 25px; }
 
 .main {
@@ -39,8 +39,8 @@ h3 {
   flex-direction: column; }
 
 .main button {
-  margin-top: 200px;
-  margin-bottom: 70px;
+  margin-top: 300px;
+  margin-bottom: 0px;
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -201,15 +201,7 @@ h3 {
   margin-bottom: 100px; }
 
 .sounds {
-  width: 1000px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 100px; }
-
-.sounds-mix {
-  margin-bottom: 50px; }
+  width: 1000px; }
 
 .clients {
   display: flex;
@@ -269,6 +261,20 @@ h3 {
 
 .gallery .logo-dark {
   filter: brightness(50%); }
+
+.contact {
+  width: 1000px;
+  margin-bottom: 100px; }
+
+.contact p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  padding-top: 0px; }
+
+.contact h3 {
+  margin-bottom: 50px; }
 
 @media only screen and (max-width: 1000px) {
   h3 {
@@ -422,6 +428,9 @@ h3 {
 
 .venues {
   width: 1000px; }
+
+#venues-played {
+  margin-top: -100px; }
 
 .admin {
   display: flex;
