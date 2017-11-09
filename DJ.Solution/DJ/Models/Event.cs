@@ -49,7 +49,7 @@ namespace DJ.Models
         }
 
         // To prevent overlap, validate dates.
-        public bool ValidateDates()
+        public bool ChecksIfDatesOverlap()
         {
           MySqlConnection conn = DB.Connection();
           conn.Open();
@@ -64,14 +64,15 @@ namespace DJ.Models
           {
             overlappingDates = rdr.GetInt32(0);
           }
-          Console.WriteLine(overlappingDates);
           if (overlappingDates > 0)
           {
-            return false;
+
+            return true;
           }
           else
           {
-            return true;
+
+            return false;
           }
         }
 
@@ -117,7 +118,7 @@ namespace DJ.Models
             conn.Open();
 
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @MonthBefore;";
+            cmd.CommandText = @"SELECT * FROM events WHERE start_time >= @MonthBefore ORDER BY start_time, end_time;";
             cmd.Parameters.Add(new MySqlParameter("@MonthBefore", monthBeforeString));
             var rdr = cmd.ExecuteReader() as MySqlDataReader;
             while (rdr.Read())
