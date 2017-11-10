@@ -4,14 +4,32 @@
   height: 100%;
   margin-bottom: 5px;
   border: 1px solid black;
-  padding: 0px 15px 0px 0px;
-}
+  padding: 0px 15px 0px 0px; }
+
+  .gig-old {
+    border: 1px solid #333;
+  }
+
+
+
+
+.gig:first-of-type {
+  margin-top: 50px; }
+
 
 .gig-icon {
   @include flex(center,center,column);
   background-color: black;
   padding: 5px 15px;
   border: 1px solid black; }
+
+.gig-old .gig-icon {
+    @include flex(center,center,column);
+    background-color: #333;
+    padding: 5px 15px;
+    border: 1px solid #333; }
+
+
 
 .gig-icon-month {
   @include font(14px,white,300); }
@@ -25,6 +43,11 @@
 .gig-time {
   @include font(14px,black,300); }
 
+.gig-old .gig-time, .gig-old .gig-title {
+  color: #333;
+}
+
 .calendar {
   margin-top: 100px;
-}
+  margin-bottom: 100px;
+ }

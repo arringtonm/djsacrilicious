@@ -21,7 +21,7 @@ h3 {
   font-weight: 700;
   color: black;
   text-align: right;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 25px; }
 
 .main {
@@ -39,8 +39,8 @@ h3 {
   flex-direction: column; }
 
 .main button {
-  margin-top: 300px;
-  margin-bottom: 0px;
+  margin-top: 200px;
+  margin-bottom: 70px;
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -160,9 +160,6 @@ h3 {
   border: 1px solid black;
   padding: 0px 15px 0px 0px; }
 
-.gig-old {
-  border: 1px solid #333; }
-
 .gig:first-of-type {
   margin-top: 50px; }
 
@@ -174,15 +171,6 @@ h3 {
   background-color: black;
   padding: 5px 15px;
   border: 1px solid black; }
-
-.gig-old .gig-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #333;
-  padding: 5px 15px;
-  border: 1px solid #333; }
 
 .gig-icon-month {
   font-family: 'Open Sans', sans-serif;
@@ -208,15 +196,20 @@ h3 {
   font-weight: 300;
   color: black; }
 
-.gig-old .gig-time, .gig-old .gig-title {
-  color: #333; }
-
 .calendar {
   margin-top: 100px;
   margin-bottom: 100px; }
 
 .sounds {
-  width: 1000px; }
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px; }
+
+.sounds-mix {
+  margin-bottom: 50px; }
 
 .clients {
   display: flex;
@@ -277,54 +270,7 @@ h3 {
 .gallery .logo-dark {
   filter: brightness(50%); }
 
-.contact {
-  width: 1000px;
-  margin-bottom: 1000px; }
-
-.contact p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: black;
-  padding-top: 0px; }
-
-.contact h3 {
-  margin-bottom: 50px; }
-
-.testimonials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 1000px;
-  margin-bottom: 0px; }
-
-.testimonials p {
-  border-left: 7px solid magenta;
-  padding-left: 20px;
-  padding-top: 0px;
-  text-align: justify;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px;
-  font-style: italic;
-  width: 70%; }
-
-.venues {
-  width: 1000px; }
-
-#venues-played {
-  margin-top: -100px; }
-
 @media only screen and (max-width: 1000px) {
-  .main {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    flex: 1 0 auto; }
-
   h3 {
     margin-right: 25px; }
 
@@ -380,15 +326,10 @@ h3 {
     margin-left: 25px;
     margin-right: 25px; }
 
-  .sounds, .venues, .contact {
-    width: calc(100vw - 50px);
+  .sounds {
+    width: 100%;
     margin-left: 25px;
     margin-right: 25px; }
-
-  .clients {
-    margin-left: 25px;
-    margin-right: 25px;
-    max-width: calc(100vw - 50px); }
 
   .clients .gallery {
     display: flex;
@@ -400,11 +341,7 @@ h3 {
     margin-right: 25px;
     margin-bottom: 250px;
     margin-top: 150px;
-    max-width: calc(90% - 50px); }
-
-  p {
-    margin-left: 25px;
-    margin-right: 25px; }
+    width: 90%; }
 
   .main p {
     margin-left: 25px;
@@ -417,7 +354,7 @@ h3 {
     height: 40px; } }
 @media only screen and (max-width: 768px) {
   .header {
-    height: 200px; }
+    height: 190px; }
 
   .header ul {
     display: flex;
@@ -425,33 +362,6 @@ h3 {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap; }
-
-  .clients {
-    margin-left: 25px;
-    margin-right: 25px;
-    max-width: calc(100vw - 50px); }
-
-  .clients .gallery {
-    flex-wrap: wrap;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 250px;
-    margin-top: 150px;
-    max-width: calc(90% - 50px); }
-
-  .sounds, .venues, .contact {
-    max-width: calc(100vw - 50px);
-    margin-left: 25px;
-    margin-right: 25px; }
-
-  .main p {
-    margin-left: 25px;
-    margin-right: 25px; }
-
-  .clients {
-    margin-left: 25px;
-    margin-right: 25px;
-    max-width: calc(100vw - 50px); }
 
   .header li {
     display: inline;
@@ -480,7 +390,7 @@ h3 {
     margin-left: 20px; }
 
   .header .logo {
-    height: 58px;
+    height: 60px;
     margin-bottom: -50px; }
 
   .main button {
@@ -491,6 +401,28 @@ h3 {
 
   .footer {
     display: none; } }
+.testimonials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
+  margin-bottom: 0px; }
+
+.testimonials p {
+  border-left: 7px solid magenta;
+  padding-left: 20px;
+  padding-top: 0px;
+  text-align: justify;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-style: italic;
+  width: 70%; }
+
+.venues {
+  width: 1000px; }
+
 .admin {
   display: flex;
   justify-content: center;
@@ -505,10 +437,9 @@ h3 {
   color: black; }
 
 .admin h3 {
-  text-align: right;
   font-family: 'Open Sans', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 400;
   color: black; }
 
 input, select, textarea {
@@ -524,7 +455,7 @@ label {
   margin-top: 20px; }
 
 #delete {
-  transform: translateY(-357px); }
+  transform: translateY(-300px); }
 
 button {
   margin-top: 200px;
@@ -547,9 +478,6 @@ button {
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5); }
   button:focus {
     outline: 0; }
-  button:disabled {
-    cursor: not-allowed;
-    background-color: #FF66FF; }
 
 .gig-edit {
   width: 1000px;

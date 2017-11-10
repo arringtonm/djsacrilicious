@@ -1,40 +1,11 @@
-@media only screen and (max-width: 768px) {
-  .header {
-    height: 190px; }
-  .header ul {
-    @include flex(center,center);
-    flex-wrap: wrap;  }
-  .header li {
-    display: inline;
-    line-height: 1.8;
-    border: none;
-    padding: 0px;
-    margin: 5px 5px;
-    & a {
-      border-right: 0px;
-      border-bottom: 10px solid magenta;
-      padding: 0px; }
-    &:hover {
-      background-color: a; } }
-   .header li a:hover {
-     border-right: none;
-     background-color: aqua; }
-  .header .container {
-     @include flex(space-around, center, column); }
-  .gig-title {
-     margin-left: 20px; }
-  .header .logo {
-    height: 60px;
-    margin-bottom: -50px; }
-  .main button {
-    margin-top: 300px;
-    margin-left: 25px;
-    margin-right: 25px;
-    padding: 10px; }
-  .footer {
-    display: none; } }
+
 
 @media only screen and (max-width: 1000px) {
+  .main {
+    @include flex(flex-start,center,column);
+    width: 100%;
+    flex: 1 0 auto; }
+  h3 { margin-right: 25px; }
   .header .container {
     margin-right: 15px; }
   .header {
@@ -76,10 +47,14 @@
     width: calc(100vw - 50px);
     margin-left: 25px;
     margin-right: 25px; }
-  .sounds {
-    width: 100%;
+  .sounds, .venues, .contact {
+    width: calc(100vw - 50px);
     margin-left: 25px;
     margin-right: 25px; }
+  .clients {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
   .clients .gallery {
     @include flex(space-around,center,row);
     flex-wrap: wrap;
@@ -87,7 +62,10 @@
     margin-right: 25px;
     margin-bottom: 250px;
     margin-top: 150px;
-    width: 90% }
+    max-width: calc(90% - 50px); }
+  p {
+    margin-left: 25px;
+    margin-right: 25px; }
   .main p {
     margin-left: 25px;
     margin-right: 25px; }
@@ -95,6 +73,68 @@
     height: 80px; }
   .footer .social-media {
     height: 40px; } }
+
+
+@media only screen and (max-width: 768px) {
+  // h3 { margin-right: 25px; }
+  .header {
+    height: 200px; }
+  .header ul {
+    @include flex(center,center);
+    flex-wrap: wrap;  }
+  .clients {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
+  .clients .gallery {
+    // @include flex(space-around,center,row);
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    max-width: calc(90% - 50px); }
+  .sounds, .venues, .contact {
+    max-width: calc(100vw - 50px);
+    margin-left: 25px;
+    margin-right: 25px; }
+  .main p {
+    margin-left: 25px;
+    margin-right: 25px; }
+  .clients {
+    margin-left: 25px;
+    margin-right: 25px;
+    max-width: calc(100vw - 50px); }
+  .header li {
+    display: inline;
+    line-height: 1.8;
+    border: none;
+    padding: 0px;
+    margin: 5px 5px;
+    & a {
+      border-right: 0px;
+      border-bottom: 10px solid magenta;
+      padding: 0px; }
+    &:hover {
+      background-color: a; } }
+   .header li a:hover {
+     border-right: none;
+     background-color: aqua; }
+  .header .container {
+     @include flex(space-around, center, column); }
+  .gig-title {
+     margin-left: 20px; }
+  .header .logo {
+    height: 58px;
+    margin-bottom: -50px; }
+  .main button {
+    margin-top: 300px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px; }
+  .footer {
+    display: none; } }
+
 
 
 // @media only screen and (max-width: 660px) {

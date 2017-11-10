@@ -1,0 +1,22 @@
+.testimonials {
+  @include flex(center,center,column);
+  width: 1000px;
+  margin-bottom: 0px; }
+
+.testimonials p {
+  border-left: 7px solid magenta;
+  padding-left: 20px;
+  padding-top: 0px;
+  text-align: justify;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-style: italic;
+  width: 70%; }
+
+.venues {
+  width: 1000px; }
+
+#venues-played {
+  margin-top: -100px;
+}
