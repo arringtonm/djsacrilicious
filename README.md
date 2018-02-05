@@ -1,6 +1,6 @@
 # ![image of dj sacrilicious](img/logo.jpg)
 
-http://arrington.github.io/djsacrilicious 
+http://arringtonm.github.io/djsacrilicious 
 
 #### _This application is a revamped simplified version of Michael's DJing website that informs the user about Michael, dates he's already been booked for, his mixes, and permits the admin to book an event through a calendar interface. 11-9-17_
 
