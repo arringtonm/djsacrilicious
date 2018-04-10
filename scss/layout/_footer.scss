@@ -19,7 +19,10 @@
   // opacity: 0.7;
   height: 20px;
   padding: 0px 10px;
-  filter: invert(100%);
-  // &:hover {
-  //   color: aqua; }
-  }
+  filter: invert(100%); }
+
+.footer a {
+  border-bottom: 1px solid black;
+  &:hover {
+    border-bottom: 1px solid aqua; }
+}

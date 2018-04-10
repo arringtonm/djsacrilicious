@@ -11,7 +11,7 @@ h3 {
   @include font(24px,black,700);
   text-align: right;
   margin-top: 200px;
-  margin-bottom: 25px; }  
+  margin-bottom: 25px; }
 
 .main {
   @include flex(flex-start,center,column);
@@ -23,7 +23,7 @@ h3 {
 
 .main button {
   margin-top: 300px;
-  margin-bottom: 0px;
+  margin-bottom: -200px;
   @include font(24px,black,700);
   background-color: #e500e5;
   padding: 20px 40px;
