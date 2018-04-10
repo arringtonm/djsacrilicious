@@ -40,7 +40,7 @@ h3 {
 
 .main button {
   margin-top: 300px;
-  margin-bottom: 0px;
+  margin-bottom: -200px;
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -99,6 +99,11 @@ h3 {
   height: 20px;
   padding: 0px 10px;
   filter: invert(100%); }
+
+.footer a {
+  border-bottom: 1px solid black; }
+  .footer a:hover {
+    border-bottom: 1px solid aqua; }
 
 .header {
   background-color: black;
