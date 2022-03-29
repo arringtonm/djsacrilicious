@@ -426,7 +426,15 @@ h3 {
   }
 
   .header .logo {
-    height: 130px;
+    /* height: 130px; */
+    /* width: 50vw; */
+    size: 50vw;
+    height: auto;
+    max-width: 60vw;
+    /* aspect-ratio: 3.6; */
+    /* aspect-ratio: 4.5; */
+    /* max-height: 50vw; */
+    /* max-width:  */
   }
 
   .header li {
@@ -456,7 +464,7 @@ h3 {
     margin-top: 320px;
     width: 80vw;
     height: 20vw;
-    font-size: 2.5rem;
+    font-size: 4vw;
   }
 
   body {
