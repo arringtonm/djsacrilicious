@@ -24,9 +24,13 @@
   display: inline;
   line-height: 1.7;
   & a {
-    border-bottom: 5px solid magenta;
+    // border-bottom: 5px solid magenta;
     @include font;
     text-decoration: none;
+    &:active {
+      border-bottom: 5px solid magenta;
+      // ß
+    }
     &:hover {
       background-color: aqua;
       color: black; } } }
