@@ -5,7 +5,6 @@
   --aqua: #00ffff;
   --magenta: #ff00ff;
   --magenta-deep: #e500e5;
-  --header-h: 108px; /* logo row + nav row on phones */
   --bar-h: 60px;     /* bottom Call / Text / Email bar */
   --gutter: 20px;
 }
@@ -21,7 +20,7 @@
 html {
   background-color: black;
   scroll-behavior: smooth;
-  scroll-padding-top: 64px;
+  scroll-padding-top: 112px; /* clears the pinned header */
   -webkit-text-size-adjust: 100%;
 }
 
@@ -111,8 +110,7 @@ a {
   background-color: black;
   color: white;
   position: sticky;
-  /* On phones the logo row scrolls away and only the nav row stays pinned. */
-  top: -60px;
+  top: 0;
   z-index: 5;
 }
 
@@ -125,12 +123,13 @@ a {
 .brand {
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 52px;
+  padding-top: 6px;
 }
 
 .brand img {
   display: block;
-  height: 40px;
+  height: 36px;
   width: auto;
   filter: invert(100%) brightness(150%);
 }
@@ -144,7 +143,7 @@ a {
 .nav a {
   display: flex;
   align-items: center;
-  min-height: 48px;
+  min-height: 44px;
   padding: 0 10px;
   font-size: 1rem;
   font-weight: 300;
@@ -457,10 +456,6 @@ p + p,
     display: none;
   }
 
-  .header {
-    top: 0;
-  }
-
   .header-inner {
     flex-direction: row;
     justify-content: space-between;
@@ -469,6 +464,7 @@ p + p,
 
   .brand {
     height: auto;
+    padding-top: 0;
   }
 
   .brand img {
