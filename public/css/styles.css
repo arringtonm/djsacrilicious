@@ -20,6 +20,9 @@
 html {
   background-color: black;
   scroll-behavior: smooth;
+  /* Chrome keeps the pinned background still during the elastic bounce past
+     the top/bottom, which exposed the gradient behind the black bars. */
+  overscroll-behavior-y: none;
   scroll-padding-top: 112px; /* clears the pinned header */
   -webkit-text-size-adjust: 100%;
 }
