@@ -15,3 +15,7 @@ Source for [djsacrilicious.com](https://djsacrilicious.com): a single static pag
     npx wrangler pages deploy public --project-name <cloudflare-project-name>
 
 The original 2017 version of this repo (C# admin backend, Sass sources) is in the git history before the `mobile-refresh` branch.
+
+## Changing the CSS
+
+Cloudflare tells browsers to keep `styles.css` for 4 hours. After editing it, bump the `?v=` number on the stylesheet link in `public/index.html` so visitors get the new file straight away.
